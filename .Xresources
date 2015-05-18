@@ -1,12 +1,12 @@
 !URXVT
-URxvt*termName:    rxvt
+URxvt.termName:    rxvt-256color
 URxvt*scrollBar:   false
 URxvt*urlLauncher: google-chrome
 URxvt*buffered: true
 !URxvt*font: xft:monospace:size=11:antialias=true:xft:wqy-zenhei:pixsize=24:antialias=true
 !URxvt*font: xft:Bitstream Vera Sans Mono:size=11:antialias=true
-!URxvt*font: xft:Bitstream Vera Sans Mono:size=11:antialias=true,xft:WenQuanYi Zen Hei:size=14:antialias=true
-URxvt*font: xft:Bitstream Vera Sans Mono:size=11:antialias=true,xft:wqy-zenhei:size=14:antialias=true
+!URxvt*font: xft:Bitstream Vera Sans Mono:size=12:antialias=true,xft:WenQuanYi Zen Hei:size=14:antialias=true
+URxvt*font: xft:Bitstream Vera Sans Mono:size=12:antialias=true,xft:wqy-zenhei:size=12:antialias=true
 !URxvt*font: xft:inconsolata:pixelsize=12
 !URxvt*font:           -*-monospace-*-*-*-12-*-*-*-*-*-*-*
 !URxvt*boldFont:       -*-monospace-*-*-*-12-*-*-*-*-*-*-*
