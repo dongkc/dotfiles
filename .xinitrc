@@ -16,4 +16,4 @@ xrdb -merge ~/.Xresources
 #keynav&
 
 xset -b
- exec awesome
+exec awesome
