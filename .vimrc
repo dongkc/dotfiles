@@ -108,7 +108,151 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+set autowrite    " Automatically save before commands like :next and :make
+
+set showmatch    " Show matching brackets.
 
 colorscheme solarized
 " ================ Custom Settings ========================
 so ~/.vim/settings.vim
+
+set showmatch    " Show matching brackets.
+
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+
+set visualbell
+set noerrorbells
+
+set nu
+set ruler
+set cindent
+
+set scrolloff=3
+
+set title
+
+set wildmenu
+
+set wildmode=list:longest
+
+
+" Auto-backup files and .swp files don't go to pwd
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+
+set fileencodings=utf-8,gbk,gb18030,utf-16,big5
+
+" cscope 
+
+if has("cscope")
+  set csprg=/usr/bin/cscope
+
+      " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+  set cscopetag
+
+      " check cscope for definition of a symbol before checking ctags: set to 1
+      " if you want the reverse search order.
+  set csto=0
+  set cst
+  set nocsverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out
+    " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+  set csverb
+endif
+
+" The following maps all invoke one of the following cscope search types:
+"
+"   's'   symbol: find all references to the token under cursor
+"   'g'   global: find global definition(s) of the token under cursor
+"   'c'   calls:  find all calls to the function name under cursor
+"   't'   text:   find all instances of the text under cursor
+"   'e'   egrep:  egrep search for the word under cursor
+"   'f'   file:   open the filename under cursor
+"   'i'   includes: find files that include the filename under cursor
+"   'd'   called: find functions that function under cursor calls
+"
+nmap <Leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <Leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <Leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <Leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <Leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <Leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <Leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <Leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" winmanager
+map <c-w><c-t> :WMToggle<cr>
+map <c-w><c-f> :FirstExplorerWindow<cr>
+map <c-w><c-b> :BottomExplorerWindow<cr>
+let g:winManagerWindowLayout='FileExplorer|TagList'
+"nmap wm :WMToggle<CR>
+let g:winManagerWidth=35
+
+
+" abbreviation
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+set selection=exclusive
+
+" fold
+syn region myFold start="{" end="}" transparent fold
+syn sync fromstart
+set foldmethod=syntax
+set foldnestmax=3
+set foldcolumn=4
+set foldlevel=10
+hi Folded       ctermfg=green ctermbg=black
+hi FoldColumn    ctermbg=black ctermfg=white
+
+autocmd FileType text setlocal textwidth=80
+autocmd FileType mail setlocal textwidth=78
+autocmd FileType c setlocal textwidth=80
+
+set swb=usetab
+
+" bufExplorer
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
+
+" c.vim
+let g:C_MapLeader = ","
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap wm :WMToggle<cr>
+
+"" complete
+set completeopt=longest,menu
+"
+"noremap jk <esc>
+"
+"
+" minibuf
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1 
+
+" taglist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+set t_Co=256
+
+fun Ranger()
+  silent !ranger --choosefile=/tmp/chosen
+  if filereadable('/tmp/chosen')
+    exec 'edit ' . system('cat /tmp/chosen')
+    call system('rm /tmp/chosen')
+  endif
+  redraw!
+endfun
+map <leader>r :call Ranger()<CR>

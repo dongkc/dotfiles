@@ -19,6 +19,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/winmanager'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle

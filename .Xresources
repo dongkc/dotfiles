@@ -21,6 +21,8 @@ URxvt*depth:32
 URxvt*preeditType: OffTheSpot
 URxvt*perl-ext-common: default,clipboard
 URxvt*urgentOnBell: true
+URxvt*inputMethod: fcitx
+URxvt*preeditType: OnTheSpot,None
 Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
