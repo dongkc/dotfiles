@@ -116,11 +116,6 @@ colorscheme solarized
 " ================ Custom Settings ========================
 so ~/.vim/settings.vim
 
-set showmatch    " Show matching brackets.
-
-nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-
 set visualbell
 set noerrorbells
 
@@ -134,22 +129,11 @@ set wildmenu
 
 set wildmode=list:longest
 
-
 " Auto-backup files and .swp files don't go to pwd
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-
 set fileencodings=utf-8,gbk,gb18030,utf-16,big5
-
-" winmanager
-map <c-w><c-t> :WMToggle<cr>
-map <c-w><c-f> :FirstExplorerWindow<cr>
-map <c-w><c-b> :BottomExplorerWindow<cr>
-let g:winManagerWindowLayout='FileExplorer|TagList'
-"nmap wm :WMToggle<CR>
-let g:winManagerWidth=35
-
 
 " abbreviation
 
@@ -180,24 +164,9 @@ let g:bufExplorerShowRelativePath=1  " Show relative paths.
 let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
 
 " c.vim
-let g:C_MapLeader = ","
-let g:winManagerWindowLayout='FileExplorer|TagList'
-nmap wm :WMToggle<cr>
+"let g:C_MapLeader = ","
 
 "" complete
 set completeopt=longest,menu
 "
-"noremap jk <esc>
-"
-"
-" minibuf
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
-
-" taglist
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-
 set t_Co=256
