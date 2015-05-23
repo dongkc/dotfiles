@@ -21,6 +21,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/winmanager'
+Plugin 'fholgado/minibufexpl.vim'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle
