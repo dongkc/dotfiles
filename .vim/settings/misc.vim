@@ -7,12 +7,3 @@ fun Ranger()
   redraw!
 endfun
 map <leader>r :call Ranger()<CR>
-
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
-noremap <leader>w :call DeleteTrailingWS()<CR>
-autocmd BufWrite *.cpp :call DeleteTrailingWS()

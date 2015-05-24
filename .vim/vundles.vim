@@ -20,8 +20,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/winmanager'
-Plugin 'fholgado/minibufexpl.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle
