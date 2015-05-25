@@ -14,12 +14,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/vundles/ "Submodules
 call vundle#begin()
 
-" let Vundle manage Vundle (required)
-Plugin 'gmarik/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle

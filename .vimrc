@@ -98,7 +98,7 @@ set wildignore+=*.png,*.jpg,*.gif
 "
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=3         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
@@ -108,7 +108,65 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+set autowrite    " Automatically save before commands like :next and :make
+
+set showmatch    " Show matching brackets.
 
 colorscheme solarized
 " ================ Custom Settings ========================
 so ~/.vim/settings.vim
+
+set visualbell
+set noerrorbells
+
+set nu
+set ruler
+set cindent
+
+set title
+
+set wildmenu
+
+set wildmode=list:longest
+
+" Auto-backup files and .swp files don't go to pwd
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+set fileencodings=utf-8,gbk,gb18030,utf-16,big5
+
+" abbreviation
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+set selection=exclusive
+
+" fold
+syn region myFold start="{" end="}" transparent fold
+syn sync fromstart
+set foldmethod=syntax
+set foldnestmax=3
+set foldcolumn=4
+set foldlevel=10
+hi Folded       ctermfg=green ctermbg=black
+hi FoldColumn    ctermbg=black ctermfg=white
+
+autocmd FileType text setlocal textwidth=80
+autocmd FileType mail setlocal textwidth=78
+autocmd FileType c setlocal textwidth=80
+
+set swb=usetab
+
+" bufExplorer
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
+
+" c.vim
+"let g:C_MapLeader = ","
+
+"" complete
+set completeopt=longest,menu
+"
+set t_Co=256
