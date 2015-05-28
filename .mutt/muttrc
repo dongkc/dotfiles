@@ -13,10 +13,10 @@ my_hdr X-Operating-System: `uname -a`
 lists -group ml.kernel .*@vger.kernel.org
 subscribe linux-kernel@vger.kernel.org
 lists -group ml.vim vim_use@googlegroups.com vim_dev@googlegroups.com \
- 	      mutt-users@mutt.org vim-dev@vim.org mutt-dev@mutt.org 
+ 	      mutt-users@mutt.org vim-dev@vim.org mutt-dev@mutt.org
 subscribe vim_use@googlegroups.com vim_dev@googlegroups.com \
- 	      mutt-users@mutt.org vim-dev@vim.org mutt-dev@mutt.org 
- 
+ 	      mutt-users@mutt.org vim-dev@vim.org mutt-dev@mutt.org
+
 # macro
 
 
