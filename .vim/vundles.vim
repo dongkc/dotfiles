@@ -21,11 +21,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/winmanager'
 
 call vundle#end()
