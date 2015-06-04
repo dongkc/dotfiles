@@ -8,5 +8,5 @@ let g:airline_theme="tomorrow"
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 
-map <C-N> :bnext<CR>
-map <C-M> :bprev<CR>
+map <C-M> :bnext<CR>
+map <C-N> :bprev<CR>

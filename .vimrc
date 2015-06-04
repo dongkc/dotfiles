@@ -71,7 +71,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
+set wrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
@@ -170,6 +170,8 @@ let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
 set completeopt=longest,menu
 "
 set t_Co=256
+
+set colorcolumn=80
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

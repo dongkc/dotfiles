@@ -11,3 +11,5 @@ export EDITOR="vim"
 eval `dircolors -b /usr/share/dircolors/dircolors.ansi-universal`
 
 alias ls="ls --color=auto"
+export  QPCPP=~/workspace/qpc-qpcpp
+export QTOOLS=~/workspace/qpc-qtools
