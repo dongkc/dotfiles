@@ -1,0 +1,47 @@
+System Installation scripts
+===========================
+
+Installation
+------------
+
+Install packages, including pkgs in rep o(pacman, yaourt) 
+
+partition disks
+
+format partition
+
+mount root partition
+
+install base group pkgs
+
+pacstrap /mnt base
+
+generate fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+add repo of archlinuxfr to pacman config
+
+config mirrorlist of pacman to 163 and sohu
+
+chroot to /mnt
+arch-root /mnt
+pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils mesa
+pacman -S xf86-video-vesa xf86-video-intel
+pacman -S syslinux
+syslinux-install_update -i -a -m
+
+execute pacman pkg install functions
+
+add user dongkc
+
+set passwd for dongkc
+
+config sudo configs for dongkc
+
+
+Configuration
+-------------
+
+config syslinux
+
+configuration, both systemwide and userwide
