@@ -67,6 +67,7 @@ colord
 binutils
 autojump
 arch-install-scripts
+cronie
 '
 
 PKGS_APPS='
@@ -118,35 +119,36 @@ __install \\\$PKGS_SOUND
 
 # Video driver
 __install \\\$PKGS_VIDEO
- 
+
 # TouchPad driver
 __install \\\$PKGS_TOUCH
- 
+
 # Bootloader
 __install \\\$PKGS_BOOTLOADER
 syslinux-install_update -i -a -m
- 
+
 # network manager
 __install \\\$PKGS_NETWORK
  systemctl enable NetworkManager
- 
+
 # fonts
 __install \\\$PKGS_FONTS
- 
+
 # shell
 __install \\\$PKGS_SHELL
 useradd -m dongkc
 chsh -s /bin/zsh dongkc
- 
+
 # Display manager
 __install \\\$PKGS_DISPLAY
 systemctl enable slim
- 
+
 # Application
 __install \\\$PKGS_APPS
 
 # tools
 __install \\\$PKGS_TOOLS
+systemctl enable cronie
 
 }
 
