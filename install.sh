@@ -182,7 +182,7 @@ config_sys_before() {
   echo 'Server = http://repo.archlinux.fr/i686' >> /etc/pacman.conf
 
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/i686' >> /etc/pacman.d/mirrorlist
-  sed -i 's/STAMP/$repo/g' /etc/pacman.d/mirrorlist
+  sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
 
   sed -i '/^HOOK/s/block //g' /etc/mkinitcpio.conf
   sed -i '/^HOOK/s/udev/udev block/g' /etc/mkinitcpio.conf
