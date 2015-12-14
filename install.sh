@@ -162,7 +162,7 @@ config_user_before() {
 
 config_user_after() {
   cd /home/dongkc
-  sudo -u dongkc git clone http://github.com/dongkc/dotfiles .dot
+  sudo -u dongkc git clone --recursive http://github.com/dongkc/dotfiles .dot
   sudo -u dongkc .dot/bin/dfm install
 
   mkinitcpio -p linux
