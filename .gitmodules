@@ -1,0 +1,3 @@
+[submodule ".config/awesome"]
+	path = .config/awesome
+	url = http://github.com/dongkc/awesome-copycats
