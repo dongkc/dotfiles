@@ -11,8 +11,17 @@ export EDITOR="vim"
 eval `dircolors -b /usr/share/dircolors/dircolors.ansi-universal`
 
 alias ls="ls --color=auto"
-export  QPCPP=~/workspace/qpc-qpcpp
+
+export QPCPP=~/workspace/qpc-qpcpp
 export QTOOLS=~/workspace/qpc-qtools
+
+# XDG Bse Directory Specification
+# XDG_DATA_DIRS
+# XDG_CONFIG_DIRS
+export XDG_CONFIG_HOME=~/.config
+export XDG_DATA_HOME=~/.data
+export XDG_CACHE_HOME=~/.cache
+export XDG_RUNTIME_DIR=~/.runtime
 
 #autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh

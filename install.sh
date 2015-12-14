@@ -65,6 +65,7 @@ hexedit
 rsync
 colord
 binutils
+autojump
 arch-install-scripts
 '
 
