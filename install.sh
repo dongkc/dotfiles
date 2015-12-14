@@ -65,6 +65,7 @@ hexedit
 rsync
 colord
 binutils
+arch-install-scripts
 '
 
 PKGS_APPS='
