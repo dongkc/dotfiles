@@ -98,7 +98,6 @@ PKGS_YAOURT='
 awesome
 vundle-git
 vim-colors-solarized-git
-dircolors-solarized-git
 '
 
 __install() {
@@ -230,7 +229,7 @@ chmod 755 /mnt/stage_2.sh
 
 stage_1_run() {
   pacstrap /mnt base
-  genfstab -U -p /mnt >> /mnt/etc/fstab
+  genfstab -p /mnt  | grep -v swap >> /mnt/etc/fstab
 
 }
 
