@@ -69,6 +69,7 @@ autojump
 arch-install-scripts
 cronie
 imagemagick
+wget
 '
 
 PKGS_APPS='
