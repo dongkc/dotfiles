@@ -59,6 +59,7 @@ fcitx
 PKGS_TOOLS='
 base-devel
 cmake
+wget
 sudo
 alsa-tools
 dos2unix
