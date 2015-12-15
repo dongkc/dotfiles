@@ -137,6 +137,9 @@ __install \\\$PKGS_NETWORK
 # fonts
 __install \\\$PKGS_FONTS
 
+# input mathod
+__install \\\$PKGS_INPUT
+
 # shell
 __install \\\$PKGS_SHELL
 
