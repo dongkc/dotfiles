@@ -129,30 +129,24 @@ __install \\\$PKGS_TOUCH
 
 # Bootloader
 __install \\\$PKGS_BOOTLOADER
-syslinux-install_update -i -a -m
 
 # network manager
 __install \\\$PKGS_NETWORK
- systemctl enable NetworkManager
 
 # fonts
 __install \\\$PKGS_FONTS
 
 # shell
 __install \\\$PKGS_SHELL
-useradd -m dongkc
-chsh -s /bin/zsh dongkc
 
 # Display manager
 __install \\\$PKGS_DISPLAY
-systemctl enable slim
 
 # Application
 __install \\\$PKGS_APPS
 
 # tools
 __install \\\$PKGS_TOOLS
-systemctl enable cronie
 
 }
 
@@ -163,6 +157,9 @@ install_yaourt_pkg() {
 #######################################################################
 
 config_user_before() {
+  useradd -m dongkc
+  chsh -s /bin/zsh dongkc
+
   echo 'dongkc ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 }
@@ -177,11 +174,25 @@ config_user_after() {
 
 config_sys_after()
 {
+  # host name
   echo "dongkc" > /etc/hostname
+
+  # locale gen
   sed -i '/#zh_CN/s/#//g' /etc/locale.gen
   sed -i '/#en_US/UTF-8/s/#//g' /etc/locale.gen
   locale-gen
+
+  # localtime
   ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+  # boot loader setting
+  syslinux-install_update -i -a -m
+
+  # service setting
+  systemctl enable NetworkManager
+  systemctl enable slim
+  systemctl enable cronie
+
 }
 
 config_sys_before() {
