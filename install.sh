@@ -88,6 +88,7 @@ mpcpp
 irssi
 slrn
 ncmpcpp
+redshift
 '
 
 PKGS_YAOURT='
@@ -208,7 +209,7 @@ chmod 755 /mnt/stage_2.sh
 
 stage_1_run() {
   pacstrap /mnt base
-  genfstab -U -p /mnt >> /mnt/etc/fstab
+  genfstab -p /mnt >> /mnt/etc/fstab
 }
 
 stage_2_run() {
