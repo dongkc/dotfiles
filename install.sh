@@ -236,9 +236,14 @@ stage_2_run() {
   arch-chroot /mnt /stage_2.sh
 }
 
+cleanup () {
+  rm /mnt/stage_2.sh
+}
+
 run() {
   stage_1_run
   stage_2_run
+  cleanup
 }
 ##################################################################
 
