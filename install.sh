@@ -98,7 +98,7 @@ PKGS_YAOURT='
 awesome
 vundle-git
 vim-colors-solarized-git
-keynav
+keynav-git
 '
 
 __install() {
