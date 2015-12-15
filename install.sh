@@ -68,6 +68,7 @@ binutils
 autojump
 arch-install-scripts
 cronie
+imagemagick
 '
 
 PKGS_APPS='
