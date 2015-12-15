@@ -1,3 +1,6 @@
 [submodule ".config/awesome"]
 	path = .config/awesome
 	url = http://github.com/dongkc/awesome-copycats
+[submodule ".config/dircolors-solarized"]
+	path = .config/dircolors-solarized
+	url = http://github.com/dongkc/dircolors-solarized
