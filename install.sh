@@ -31,6 +31,7 @@ syslinux
 '
 PKGS_NETWORK='
 networkmanager
+net-tools
 '
 
 PKGS_FONTS='
