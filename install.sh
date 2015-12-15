@@ -58,6 +58,7 @@ fcitx
 
 PKGS_TOOLS='
 base-devel
+cmake
 sudo
 alsa-tools
 dos2unix
@@ -69,7 +70,6 @@ autojump
 arch-install-scripts
 cronie
 imagemagick
-wget
 '
 
 PKGS_APPS='
@@ -177,6 +177,10 @@ config_user_after() {
 config_sys_after()
 {
   echo "dongkc" > /etc/hostname
+  sed -i '/#zh_CN/s/#//g' /etc/locale.gen
+  sed -i '/#en_US/UTF-8/s/#//g' /etc/locale.gen
+  locale-gen
+  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 }
 
 config_sys_before() {
@@ -210,7 +214,8 @@ chmod 755 /mnt/stage_2.sh
 
 stage_1_run() {
   pacstrap /mnt base
-  genfstab -p /mnt >> /mnt/etc/fstab
+  genfstab -U -p /mnt >> /mnt/etc/fstab
+
 }
 
 stage_2_run() {
