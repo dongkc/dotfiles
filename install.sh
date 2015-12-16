@@ -60,6 +60,7 @@ PKGS_TOOLS='
 base-devel
 sudo
 alsa-tools
+ntfs-3g
 dos2unix
 hexedit
 rsync
