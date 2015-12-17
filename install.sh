@@ -35,12 +35,12 @@ net-tools
 '
 
 PKGS_FONTS='
-wqy-microhei
-wqy-zenhei
-wqy-bitmapfont
 ttf-dejavu
 ttf-inconsolata
-ttf-ubuntu-font-family
+ttf-anonymous-pro
+ttf-wqy-microhei-ibx
+ttf-wqy-zenhei-ibx
+ttf-oxygen-ibx
 '
 
 PKGS_SHELL='
@@ -61,7 +61,6 @@ PKGS_TOOLS='
 cairo-infinality-ultimate
 freetype2-infinality-ultimate
 fontconfig-infinality-ultimate
-ttf-oxygen-ibx
 base-devel
 cmake
 wget
@@ -178,8 +177,8 @@ config_user_after() {
   sudo -u dongkc git clone --recursive http://github.com/dongkc/dotfiles .dot
   sudo -u dongkc .dot/bin/dfm install
 
-  sudo -u dongkc mkdir -p ~/.data/luakit/adblock
-  sudo -u dongkc ~/bin/adblock-update.sh
+  sudo -u dongkc mkdir -p /home/dongkc/.data/luakit/adblock
+  sudo -u dongkc /home/dongkc/bin/adblock-update.sh
 
   # fonts config
   rm /etc/fonts/conf.d/83-yes-bitmaps.conf
@@ -195,7 +194,7 @@ config_sys_after()
 
   # locale gen
   sed -i '/#zh_CN/s/#//g' /etc/locale.gen
-  sed -i '/#en_US/UTF-8/s/#//g' /etc/locale.gen
+  sed -i '/#en_US/s/#//g' /etc/locale.gen
   locale-gen
 
   # localtime
@@ -220,8 +219,14 @@ config_sys_before() {
   echo 'SigLevel = Never' >> /etc/pacman.conf
   echo 'Server = http://bohoomil.com/repo/i686' >> /etc/pacman.conf
 
+  echo '[infinality-bundle-fonts]' >> /etc/pacman.conf
+  echo 'SigLevel = Never' >> /etc/pacman.conf
+  echo 'Server = http://bohoomil.com/repo/fonts' >> /etc/pacman.conf
+
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/i686' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
+
+  pacman -Sy
 
   sed -i '/^HOOK/s/block //g' /etc/mkinitcpio.conf
   sed -i '/^HOOK/s/udev/udev block/g' /etc/mkinitcpio.conf
