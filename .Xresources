@@ -1,18 +1,26 @@
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 !URXVT
 URxvt.termName:    rxvt-256color
 URxvt*scrollBar:   false
-URxvt*urlLauncher: google-chrome
+URxvt*urlLauncher: luakit
 URxvt*buffered: true
 !URxvt*font: xft:monospace:size=11:antialias=true:xft:wqy-zenhei:pixsize=24:antialias=true
 !URxvt*font: xft:Bitstream Vera Sans Mono:size=11:antialias=true
 !URxvt*font: xft:Bitstream Vera Sans Mono:size=12:antialias=true,xft:WenQuanYi Zen Hei:size=14:antialias=true
-URxvt*font: xft:Bitstream Vera Sans Mono:size=12:antialias=true,xft:wqy-zenhei:size=12:antialias=true
+!URxvt*font: xft:Bitstream Vera Sans Mono:size=12:antialias=true,xft:wqy-zenhei:size=12:antialias=true
+URxvt*font: xft:Inconsolata:size=14:antialias=true,xft:wqy-zenhei:size=14:antialias=true
 !URxvt*font: xft:inconsolata:pixelsize=12
 !URxvt*font:           -*-monospace-*-*-*-12-*-*-*-*-*-*-*
 !URxvt*boldFont:       -*-monospace-*-*-*-12-*-*-*-*-*-*-*
 !URxvt*italicFont:     -*-monospace-*-*-12-*-*-*-*-*-*-*
 !URxvt*boldItalicFont: -*-monospace-*-*-12-*-*-*-*-*-*-*
-URxvt*transparent:false 
+URxvt*transparent:false
 URxvt*shading: 100
 URxvt*letterSpace: -1
 URxvt*cursorBlink: False

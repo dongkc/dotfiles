@@ -58,6 +58,10 @@ fcitx
 '
 
 PKGS_TOOLS='
+cairo-infinality-ultimate
+freetype2-infinality-ultimate
+fontconfig-infinality-ultimate
+ttf-oxygen-ibx
 base-devel
 cmake
 wget
@@ -117,6 +121,9 @@ __yaourt_install() {
 }
 
 install_pacman_pkg() {
+# tools
+__install \\\$PKGS_TOOLS
+
 # X server
 __install \\\$PKGS_X
 
@@ -150,9 +157,6 @@ __install \\\$PKGS_DISPLAY
 # Application
 __install \\\$PKGS_APPS
 
-# tools
-__install \\\$PKGS_TOOLS
-
 }
 
 install_yaourt_pkg() {
@@ -173,6 +177,13 @@ config_user_after() {
   cd /home/dongkc
   sudo -u dongkc git clone --recursive http://github.com/dongkc/dotfiles .dot
   sudo -u dongkc .dot/bin/dfm install
+
+  sudo -u dongkc mkdir -p ~/.data/luakit/adblock
+  sudo -u dongkc ~/bin/adblock-update.sh
+
+  # fonts config
+  rm /etc/fonts/conf.d/83-yes-bitmaps.conf
+  cd /etc/fonts/conf.d && ln -s /etc/fonts/conf.avail.infinality/82-no-bitmaps.conf
 
   mkinitcpio -p linux
 }
@@ -204,6 +215,10 @@ config_sys_before() {
   echo '[archlinuxfr]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
   echo 'Server = http://repo.archlinux.fr/i686' >> /etc/pacman.conf
+
+  echo '[infinality-bundle]' >> /etc/pacman.conf
+  echo 'SigLevel = Never' >> /etc/pacman.conf
+  echo 'Server = http://bohoomil.com/repo/i686' >> /etc/pacman.conf
 
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/i686' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
