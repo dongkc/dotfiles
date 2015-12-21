@@ -86,15 +86,16 @@ ranger
 vim
 git
 luakit
+w3m
 zathura
 zathura-pdf-poppler
 poppler-data
 feh
 mplayer
-mpcpp
 irssi
 slrn
 ncmpcpp
+asciidoc
 redshift
 '
 
