@@ -76,6 +76,7 @@ autojump
 arch-install-scripts
 cronie
 imagemagick
+libnotify
 '
 
 PKGS_APPS='
