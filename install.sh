@@ -77,6 +77,7 @@ arch-install-scripts
 cronie
 imagemagick
 libnotify
+clang
 '
 
 PKGS_APPS='
