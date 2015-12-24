@@ -78,6 +78,8 @@ cronie
 imagemagick
 libnotify
 clang
+pulseaudio
+pulseaudio-alsa
 '
 
 PKGS_APPS='

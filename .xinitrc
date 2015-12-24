@@ -16,6 +16,7 @@ xrdb -merge ~/.Xresources
 
 keynav&
 redshift&
+pulseaudio --start
 
 xset -b
 exec awesome
