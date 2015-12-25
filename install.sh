@@ -95,12 +95,16 @@ zathura
 zathura-pdf-poppler
 poppler-data
 feh
-mplayer
 irssi
 slrn
+mplayer
+mpd
+mpc
 ncmpcpp
 asciidoc
 redshift
+retawq
+newsbeuter
 '
 
 PKGS_YAOURT='
@@ -108,6 +112,7 @@ awesome
 vundle-git
 vim-colors-solarized-git
 keynav-git
+urxvt-clipboard
 '
 
 __install() {

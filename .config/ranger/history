@@ -3,7 +3,6 @@ shell -p du --max-depth=1 -h --apparent-size
 exit
 open_with mplayer
 shell ls
-open_with 
 open_with vim
 delete 
 
@@ -11,3 +10,5 @@ qa
 search sof
 search poco
 q:
+search video
+open_with 

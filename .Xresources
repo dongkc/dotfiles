@@ -32,6 +32,7 @@ URxvt*perl-ext-common: default,clipboard
 URxvt*urgentOnBell: true
 URxvt*inputMethod: fcitx
 URxvt*preeditType: OnTheSpot,None
+URxvt.perl-ext-common: clipboard
 Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
