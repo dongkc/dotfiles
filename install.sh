@@ -105,6 +105,7 @@ asciidoc
 redshift
 retawq
 newsbeuter
+unclutter
 '
 
 PKGS_YAOURT='

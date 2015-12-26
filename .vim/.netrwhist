@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/dongkc/dotfiles-1/vim/settings'
 let g:netrw_dirhist_2='/home/dongkc/.vimbak'
 let g:netrw_dirhist_3='/home/dongkc/dotfiles-1/tmux'
 let g:netrw_dirhist_4='/'
+let g:netrw_dirhist_5='/home/dongkc/.config'
+let g:netrw_dirhist_6='/home/dongkc/.config/remind'
