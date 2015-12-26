@@ -9,7 +9,7 @@ search sof
 search poco
 q:
 search video
-open_with 
 search itune
 open_with mplayer
 delete 
+open_with 
