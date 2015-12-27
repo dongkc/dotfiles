@@ -78,6 +78,8 @@ cronie
 imagemagick
 libnotify
 clang
+ctags
+cscope
 pulseaudio
 pulseaudio-alsa
 '
