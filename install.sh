@@ -80,6 +80,7 @@ libnotify
 clang
 ctags
 cscope
+hub
 pulseaudio
 pulseaudio-alsa
 '
