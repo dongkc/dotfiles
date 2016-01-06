@@ -11,5 +11,6 @@ q:
 search video
 search itune
 open_with mplayer
-delete 
 open_with 
+delete 
+search mnt
