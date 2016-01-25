@@ -2,8 +2,6 @@ shell
 shell -p du --max-depth=1 -h --apparent-size
 exit
 shell ls
-open_with vim
-
 qa
 search sof
 search poco
@@ -12,5 +10,13 @@ search video
 search itune
 open_with mplayer
 open_with 
-delete 
 search mnt
+search main
+search multi
+search rec
+ 
+open_with vim
+
+rename kaifa.doc
+rename ISO_14496_14.PDF
+delete 

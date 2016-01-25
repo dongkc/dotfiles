@@ -1,5 +1,6 @@
 # Write your default config options here!
 
-#subcp=gb
+subcp=cp936
 font = "WenQuanYi Zen Hei"
+#subfont-encoding = cp936
 
