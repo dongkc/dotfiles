@@ -28,8 +28,11 @@ export XDG_RUNTIME_DIR=~/.runtime
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-plugins=(git)
+plugins=(git z)
+#plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # github
 eval "$(hub alias -s)"
+
+export LD_LIBRARY_PATH=/home/dongkc/code/macchina.io/platform/lib/Linux/i686/
