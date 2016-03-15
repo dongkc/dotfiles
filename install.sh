@@ -64,6 +64,7 @@ fontconfig-infinality-ultimate
 base-devel
 cmake
 wget
+xorg-luit
 sudo
 alsa-tools
 ntfs-3g
