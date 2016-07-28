@@ -223,6 +223,8 @@ config_sys_after()
   # boot loader setting
   syslinux-install_update -i -a -m
 
+  sed -i 's/sda3/sda1/g' /boot/syslinux/syslinux.cfg
+
   # service setting
   systemctl enable NetworkManager
   systemctl enable slim
