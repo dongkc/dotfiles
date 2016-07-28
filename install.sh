@@ -125,6 +125,10 @@ __install() {
   for pkg in \\\$@
   do
     pacman -S --needed --noconfirm \\\$pkg
+    if [ $0 != "0" ]
+    then
+      exit -1
+    fi
   done
 }
 
