@@ -193,6 +193,7 @@ config_user_after() {
   sudo -u dongkc .dot/bin/dfm install
 
   sudo -u dongkc mkdir -p /home/dongkc/.data/luakit/adblock
+  cd /home/dongkc/.data/luakit/adblock
   sudo -u dongkc /home/dongkc/bin/adblock-update.sh
 
   # fonts config
