@@ -62,6 +62,7 @@ cairo-infinality-ultimate
 freetype2-infinality-ultimate
 fontconfig-infinality-ultimate
 base-devel
+linux-headers
 cmake
 wget
 xorg-luit
