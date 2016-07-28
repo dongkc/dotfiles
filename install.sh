@@ -227,15 +227,15 @@ config_sys_after()
 
 config_sys_before() {
   echo '[archlinuxfr]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
   echo 'Server = http://repo.archlinux.fr/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
   echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle-fonts]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
   echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/fonts' >> /etc/pacman.conf
 
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
