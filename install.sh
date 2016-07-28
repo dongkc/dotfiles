@@ -53,7 +53,6 @@ slock
 '
 
 PKGS_INPUT='
-fcitx-sogoupinyin
 fcitx
 '
 
@@ -119,6 +118,7 @@ vundle-git
 vim-colors-solarized-git
 keynav-git
 urxvt-clipboard
+fcitx-sogoupinyin
 '
 
 __install() {
@@ -289,6 +289,8 @@ run() {
   stage_1_run
   stage_2_run
   cleanup
+
+  echo "Install done, please set password manually before rebooting !!!"
 }
 ##################################################################
 
