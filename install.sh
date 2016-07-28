@@ -186,6 +186,9 @@ config_user_before() {
 
   echo 'dongkc ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+  echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
+  echo 'LC_COLLATE=C' >> /etc/locale.conf
 }
 
 config_user_after() {
