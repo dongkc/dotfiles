@@ -228,17 +228,17 @@ config_sys_after()
 config_sys_before() {
   echo '[archlinuxfr]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://repo.archlinux.fr/i686' >> /etc/pacman.conf
+  echo 'Server = http://repo.archlinux.fr/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://bohoomil.com/repo/i686' >> /etc/pacman.conf
+  echo 'Server = http://bohoomil.com/repo/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle-fonts]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
   echo 'Server = http://bohoomil.com/repo/fonts' >> /etc/pacman.conf
 
-  echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/i686' >> /etc/pacman.d/mirrorlist
+  echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
 
   pacman -Sy
