@@ -179,3 +179,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 inoremap jk <esc>
+
+"onvert the current word to uppercase when you're in insert mode
+imap <c-u> <esc>bvwUei
