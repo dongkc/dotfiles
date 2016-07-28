@@ -232,11 +232,11 @@ config_sys_before() {
 
   echo '[infinality-bundle]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://bohoomil.com/repo/x86_64' >> /etc/pacman.conf
+  echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle-fonts]' >> /etc/pacman.conf
   echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://bohoomil.com/repo/fonts' >> /etc/pacman.conf
+  echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/fonts' >> /etc/pacman.conf
 
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
