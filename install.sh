@@ -127,7 +127,7 @@ __install() {
     pacman -S --needed --noconfirm \\\$pkg
     if [ $0 != "0" ]
     then
-      exit -1
+      echo $pkg >> /tmp/failed_pkg
     fi
   done
 }
@@ -191,8 +191,6 @@ config_user_before() {
   echo 'dongkc ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-  echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
-  echo 'LC_COLLATE=C' >> /etc/locale.conf
 }
 
 config_user_after() {
@@ -251,6 +249,9 @@ config_sys_before() {
 
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
+
+  echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
+  echo 'LC_COLLATE=C' >> /etc/locale.conf
 
   pacman -Sy
 
