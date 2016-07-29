@@ -93,6 +93,7 @@ yaourt
 ranger
 vim
 git
+openssh
 luakit
 w3m
 zathura
@@ -101,7 +102,6 @@ poppler-data
 feh
 irssi
 slrn
-mplayer
 mpd
 mpc
 ncmpcpp
