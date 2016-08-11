@@ -53,7 +53,6 @@ slock
 '
 
 PKGS_INPUT='
-fcitx-sogoupinyin
 fcitx
 '
 
@@ -62,6 +61,7 @@ cairo-infinality-ultimate
 freetype2-infinality-ultimate
 fontconfig-infinality-ultimate
 base-devel
+linux-headers
 cmake
 wget
 xorg-luit
@@ -93,6 +93,7 @@ yaourt
 ranger
 vim
 git
+openssh
 luakit
 w3m
 zathura
@@ -101,7 +102,6 @@ poppler-data
 feh
 irssi
 slrn
-mplayer
 mpd
 mpc
 ncmpcpp
@@ -118,12 +118,17 @@ vundle-git
 vim-colors-solarized-git
 keynav-git
 urxvt-clipboard
+fcitx-sogoupinyin
 '
 
 __install() {
   for pkg in \\\$@
   do
     pacman -S --needed --noconfirm \\\$pkg
+    if [ $0 != "0" ]
+    then
+      echo $pkg >> /tmp/failed_pkg
+    fi
   done
 }
 
@@ -185,6 +190,7 @@ config_user_before() {
 
   echo 'dongkc ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
 }
 
 config_user_after() {
@@ -193,6 +199,7 @@ config_user_after() {
   sudo -u dongkc .dot/bin/dfm install
 
   sudo -u dongkc mkdir -p /home/dongkc/.data/luakit/adblock
+  cd /home/dongkc/.data/luakit/adblock
   sudo -u dongkc /home/dongkc/bin/adblock-update.sh
 
   # fonts config
@@ -218,6 +225,8 @@ config_sys_after()
   # boot loader setting
   syslinux-install_update -i -a -m
 
+  sed -i 's/sda3/sda1/g' /boot/syslinux/syslinux.cfg
+
   # service setting
   systemctl enable NetworkManager
   systemctl enable slim
@@ -227,19 +236,22 @@ config_sys_after()
 
 config_sys_before() {
   echo '[archlinuxfr]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://repo.archlinux.fr/i686' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
+  echo 'Server = http://repo.archlinux.fr/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://bohoomil.com/repo/i686' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
+  echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/x86_64' >> /etc/pacman.conf
 
   echo '[infinality-bundle-fonts]' >> /etc/pacman.conf
-  echo 'SigLevel = Never' >> /etc/pacman.conf
-  echo 'Server = http://bohoomil.com/repo/fonts' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
+  echo 'Server = http://mirrors.ustc.edu.cn/infinality-bundle/fonts' >> /etc/pacman.conf
 
-  echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/i686' >> /etc/pacman.d/mirrorlist
+  echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
+
+  echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
+  echo 'LC_COLLATE=C' >> /etc/locale.conf
 
   pacman -Sy
 
@@ -284,6 +296,8 @@ run() {
   stage_1_run
   stage_2_run
   cleanup
+
+  echo "Install done, please set password manually before rebooting !!!"
 }
 ##################################################################
 
