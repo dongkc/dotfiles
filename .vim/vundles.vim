@@ -24,6 +24,8 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/winmanager'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'jeaye/color_coded'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle
