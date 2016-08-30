@@ -36,4 +36,7 @@
 #macro index gp "<change-folder> +private<enter>" "Go to private"
 #macro index gl "<change-folder> ~/mail<enter>" "Go to private"
 #
+macro index G "!fetchmail -a -m 'procmail -d %T'\r"
+macro pager G "!fetchmail -a -m 'procmail -d %T'\r"
 mailboxes +inbox
+mailboxes +mbox
