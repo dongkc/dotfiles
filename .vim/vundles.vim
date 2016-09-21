@@ -19,12 +19,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/winmanager'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 "Filetype plugin indent on is required by vundle
