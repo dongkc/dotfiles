@@ -91,6 +91,7 @@ mutt
 yaourt
 ranger
 vim
+emacs
 git
 openssh
 luakit
@@ -109,6 +110,10 @@ redshift
 retawq
 newsbeuter
 unclutter
+tlp
+tlp-rdw
+tp_smapi
+acpi_call
 '
 
 PKGS_YAOURT='
@@ -118,6 +123,7 @@ vim-colors-solarized-git
 keynav-git
 urxvt-clipboard
 fcitx-sogoupinyin
+aclidswitch
 '
 
 __install() {
