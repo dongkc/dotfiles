@@ -235,6 +235,10 @@ config_sys_after()
   # service setting
   systemctl enable NetworkManager
   systemctl enable cronie
+  systemctl enable tlp.service
+  systemctl enable tlp-sleep.service
+  systemctl enable NetworkManager-dispatcher.service
+  systemctl mask systemd-rfkill.service
 
 }
 
