@@ -48,7 +48,6 @@ zsh
 '
 
 PKGS_DISPLAY='
-slim
 slock
 '
 
@@ -229,7 +228,6 @@ config_sys_after()
 
   # service setting
   systemctl enable NetworkManager
-  systemctl enable slim
   systemctl enable cronie
 
 }
