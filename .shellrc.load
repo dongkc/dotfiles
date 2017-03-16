@@ -12,6 +12,7 @@ eval `dircolors -b ~/.config/dircolors-solarized/dircolors.ansi-universal`
 
 alias ls="ls --color=auto"
 alias newsmth='luit -encoding gbk telnet newsmth.org'
+alias emacs="emacs -nw"
 
 export QPCPP=~/workspace/qpc-qpcpp
 export QTOOLS=~/workspace/qpc-qtools
