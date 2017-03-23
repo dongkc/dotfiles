@@ -2,4 +2,4 @@ map <PageUp> scroll full-up
 map <PageDown> scroll full-down
 map <Left> scroll full-up
 map <Right> scroll full-down
-map <Space> scroll half-down
+map <Space> scroll full-down
