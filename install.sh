@@ -92,6 +92,7 @@ yaourt
 ranger
 vim
 emacs
+bbdb
 git
 openssh
 luakit
