@@ -20,3 +20,5 @@ open_with vim
 rename kaifa.doc
 rename ISO_14496_14.PDF
 delete 
+search med
+search sv

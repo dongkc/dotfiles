@@ -21,9 +21,6 @@ pulseaudio --start
 unclutter &
 mpd
 
-cd ~/.config/remind && \
-remind -z1 '-knotify-send -u critical "-------- 事件提醒 --------" %s &'  ~/.config/remind/remind.conf &
-
 #setxkbmap -option ctrl:swapcaps
 
 xset -b
