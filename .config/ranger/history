@@ -8,7 +8,6 @@ search poco
 q:
 search video
 search itune
-open_with mplayer
 open_with 
 search mnt
 search main
@@ -16,7 +15,8 @@ search multi
 search rec
  
 open_with vim
-
 rename kaifa.doc
 rename ISO_14496_14.PDF
 delete 
+open_with mplayer
+
