@@ -35,12 +35,10 @@ net-tools
 '
 
 PKGS_FONTS='
-ttf-dejavu
+adobe-source-code-pro-fonts
 ttf-inconsolata
-ttf-anonymous-pro
 ttf-wqy-microhei-ibx
 ttf-wqy-zenhei-ibx
-ttf-oxygen-ibx
 '
 
 PKGS_SHELL='
@@ -125,6 +123,7 @@ keynav-git
 urxvt-clipboard
 fcitx-sogoupinyin
 aclidswitch
+global
 '
 
 __install() {
