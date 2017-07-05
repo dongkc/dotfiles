@@ -4,9 +4,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule ".config/awesome"]
-	path = .config/awesome
-	url = https://github.com/dongkc/awesome-copycats
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/dongkc/emacs.d
