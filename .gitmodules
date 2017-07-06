@@ -7,3 +7,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/dongkc/emacs.d
+[submodule ".config/awesome"]
+	path = .config/awesome
+	url = https://github.com/dongkc/awesome-copycats
