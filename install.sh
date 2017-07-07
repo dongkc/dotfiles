@@ -9,6 +9,7 @@ xorg-server
 xorg-xinit
 xorg-utils
 xorg-server-utils
+xorg-xbacklight
 mesa
 '
 
