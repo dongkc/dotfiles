@@ -38,8 +38,8 @@ net-tools
 PKGS_FONTS='
 adobe-source-code-pro-fonts
 ttf-inconsolata
-ttf-wqy-microhei-ibx
-ttf-wqy-zenhei-ibx
+wqy-microhei
+wqy-zenhei
 '
 
 PKGS_SHELL='
