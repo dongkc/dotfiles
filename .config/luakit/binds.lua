@@ -437,10 +437,10 @@ add_binds("normal", {
         function (w, m) w:forward(m.count) end),
 
     -- Tab
-    key({"Control"}, "Page_Up", "Go to previous tab.",
+    key({"Control"}, "p", "Go to previous tab.",
         function (w) w:prev_tab() end),
 
-    key({"Control"}, "Page_Down", "Go to next tab.",
+    key({"Control"}, "n", "Go to next tab.",
         function (w) w:next_tab() end),
 
     key({"Control"}, "Tab", "Go to next tab.",
