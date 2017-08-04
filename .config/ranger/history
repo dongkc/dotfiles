@@ -8,14 +8,11 @@ search poco
 q:
 search video
 search itune
-open_with mplayer
 open_with 
 search mnt
 search main
 search multi
 search rec
- 
-
 rename kaifa.doc
 rename ISO_14496_14.PDF
 search med
