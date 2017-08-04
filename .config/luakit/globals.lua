@@ -1,18 +1,19 @@
 -- Global variables for luakit
-globals = {
+
+local globals = {
     homepage            = "http://www.bing.com/",
- -- homepage            = "http://github.com/mason-larobina/luakit",
     scroll_step         = 40,
     zoom_step           = 0.1,
     max_cmd_history     = 100,
     max_srch_history    = 100,
- -- http_proxy          = "http://example.com:3128",
     default_window_size = "1366x768",
+ -- http_proxy          = "http://example.com:3128",
 
  -- Disables loading of hostnames from /etc/hosts (for large host files)
  -- load_etc_hosts      = false,
  -- Disables checking if a filepath exists in search_open function
  -- check_filepath      = false,
+    term                = "urxvt",
 }
 
 -- Make useragent
@@ -43,14 +44,14 @@ soup.ssl_strict = false
 
 -- Set cookie acceptance policy
 cookie_policy = { always = 0, never = 1, no_third_party = 2 }
-soup.accept_policy = cookie_policy.always
+soup.accept_policy = 'never'
 
 -- List of search engines. Each item must contain a single %s which is
 -- replaced by URI encoded search terms. All other occurances of the percent
 -- character (%) may need to be escaped by placing another % before or after
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
-search_engines = {
+globals.search_engines = {
     b           = "https://www.bing.com/?q=%s",
     i           = "http://www.iciba.com/%s",
     duckduckgo  = "https://duckduckgo.com/?q=%s",
@@ -61,19 +62,19 @@ search_engines = {
 }
 
 -- Set google as fallback search engine
-search_engines.default = search_engines.b
+globals.search_engines.default = globals.search_engines.b
 -- Use this instead to disable auto-searching
 --search_engines.default = "%s"
 
 -- Per-domain webview properties
 -- See http://webkitgtk.org/reference/webkitgtk/stable/WebKitWebSettings.html
-domain_props = { --[[
+globals.domain_props = {
     ["all"] = {
-        enable_scripts          = false,
-        enable_plugins          = false,
-        enable_private_browsing = false,
-        user_stylesheet_uri     = "",
-    },
+        enable_webgl               = true,
+        -- enable_scripts          = false,
+        -- enable_plugins          = false,
+        -- enable_private_browsing = false,
+    }, --[[
     ["youtube.com"] = {
         enable_scripts = true,
         enable_plugins = true,
@@ -84,4 +85,5 @@ domain_props = { --[[
     }, ]]
 }
 
+return globals
 -- vim: et:sw=4:ts=8:sts=4:tw=80
