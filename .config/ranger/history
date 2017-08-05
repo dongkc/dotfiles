@@ -13,10 +13,13 @@ search mnt
 search main
 search multi
 search rec
+ 
+open_with vim
 rename kaifa.doc
 rename ISO_14496_14.PDF
+delete 
+open_with mplayer
+
 search med
 search sv
-search nuc
-open_with vim
-delete 
+d

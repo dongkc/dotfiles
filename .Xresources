@@ -12,6 +12,7 @@ URxvt*urlLauncher: luakit
 URxvt*buffered: true
 !URxvt*font: xft:DejaVu Sans Mono for Powerline:style=Bold:size=11:antialias=true,xft:wqy-zenhei:size=12:antialias=true
 URxvt*font: xft:Source Code Pro:style=Bold:size=11:antialias=true,xft:wqy-microhei:size=10:antialias=true
+!URxvt*font: xft:Source Code Pro:style=Bold:size=11:antialias=true,xft:Source Han Sans CN:size=11:antialias=true
 URxvt*transparent:false
 URxvt*shading: 100
 URxvt*letterSpace: -2

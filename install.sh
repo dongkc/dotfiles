@@ -82,6 +82,7 @@ cscope
 hub
 pulseaudio
 pulseaudio-alsa
+fbreader
 '
 
 PKGS_APPS='
@@ -122,9 +123,10 @@ vundle-git
 vim-colors-solarized-git
 keynav-git
 urxvt-clipboard
-fcitx-sogoupinyin
 aclidswitch
+otf-literata
 global
+otf-literata
 '
 
 __install() {
