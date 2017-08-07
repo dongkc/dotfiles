@@ -124,7 +124,6 @@ vim-colors-solarized-git
 keynav-git
 urxvt-clipboard
 aclidswitch
-otf-literata
 global
 otf-literata
 '
