@@ -1,4 +1,5 @@
 .vim/bundle/
 .vim/backups/
-.config/ranger/bookmarks
 .vim/.netrwhist
+.config/ranger/bookmarks
+.config/ranger/history
