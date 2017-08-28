@@ -29,14 +29,12 @@ fi
 
 xrdb -merge ~/.Xresources
 
-~/bin/am
 keynav &
 redshift &
-pulseaudio --start
 unclutter &
 mpd
 
-#setxkbmap -option ctrl:swapcaps
+setxkbmap -option ctrl:swapcaps
 
 xset -b
 exec awesome
