@@ -1,5 +1,4 @@
-(setq package-archives
-    '(("melpa"   . "http://elpa.emacs-china.org/melpa/")
-      ("gnu"     . "http://elpa.emacs-china.org/gnu/")))
-(color-theme-sanityinc-solarized-light)
-(set-default-font "Source Code Pro Bold")
+;;(color-theme-sanityinc-solarized-light)
+;;(set-default-font "Source Code Pro Bold")
+;;(set-face-attribute 'default nil :width 'condensed)
+;;(set-default-font "Monaco-10")
