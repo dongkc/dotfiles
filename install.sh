@@ -249,7 +249,12 @@ config_sys_before() {
   echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
   echo 'Server = http://repo.archlinux.fr/x86_64' >> /etc/pacman.conf
 
+  echo '[archlinuxcn]' >> /etc/pacman.conf
+  echo 'SigLevel = Optional TrustAll' >> /etc/pacman.conf
+  echo 'Server = http://repo.archlinuxcn.org/x86_64' >> /etc/pacman.conf
+
   echo 'Server = http://mirrors.163.com/archlinux/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
+  echo 'Server = http://mirrors.163.com/archlinux-cn/STAMP/os/x86_64' >> /etc/pacman.d/mirrorlist
   sed -i 's/STAMP/\\\$repo/g' /etc/pacman.d/mirrorlist
 
   echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
