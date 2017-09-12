@@ -79,6 +79,7 @@ libnotify
 clang
 ctags
 cscope
+glide
 hub
 pulseaudio
 pulseaudio-alsa
