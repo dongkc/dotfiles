@@ -29,3 +29,5 @@ Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
 #include "/home/dongkc/.config/Xcolours/solarized"
+
+!Emacs*font: Source Code Pro-11:spacing=110:weight=bold

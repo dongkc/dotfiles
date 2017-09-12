@@ -6,7 +6,7 @@
 
 ####
 # put any bash/zsh customizations in here
-export EDITOR="emacs"
+export EDITOR="vim"
 eval `dircolors -b ~/.config/dircolors-solarized/dircolors.ansi-universal`
 
 alias ls="ls --color=auto"
