@@ -5,8 +5,8 @@ map <Right> scroll full-down
 map <Space> scroll full-down
 
 set recolor true
-set recolor-darkcolor "#dcdccc"
-set recolor-lightcolor "#002b36"
+set recolor-darkcolor "#383b30"
+set recolor-lightcolor "#f8e0cb"
 
 set window-title-basename "true"
 set selection-clipboard "clipboard"
