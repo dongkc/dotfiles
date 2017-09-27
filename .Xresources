@@ -29,6 +29,7 @@ URxvt.perl-ext-common: clipboard
 Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
+Emacs.FontBackend: xft
+Emacs*font: Source Code Pro Black-10:spacing=110:weight=bold
+
 #include "/home/dongkc/.config/Xcolours/solarized"
-!Emacs.FontBackend: xft
-!echo "Emacs.font: Monospace-10" >> ~/.Xresources

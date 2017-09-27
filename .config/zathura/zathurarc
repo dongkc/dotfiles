@@ -3,3 +3,10 @@ map <PageDown> scroll full-down
 map <Left> scroll full-up
 map <Right> scroll full-down
 map <Space> scroll full-down
+
+set recolor true
+set recolor-darkcolor "#383b30"
+set recolor-lightcolor "#f8e0cb"
+
+set window-title-basename "true"
+set selection-clipboard "clipboard"
