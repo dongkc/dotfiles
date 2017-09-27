@@ -2,6 +2,7 @@
 
 export PATH=$PATH:$HOME/bin
 export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+export EDITOR="vim"
 
 export QPCPP=~/workspace/qpc-qpcpp
 export QTOOLS=~/workspace/qpc-qtools
