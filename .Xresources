@@ -4,6 +4,7 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+!Xft.embolden: true
 
 !URXVT
 URxvt.termName:    rxvt-256color
@@ -29,3 +30,5 @@ Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
 #include "/home/dongkc/.config/Xcolours/solarized"
+!Emacs.FontBackend: xft
+!echo "Emacs.font: Monospace-10" >> ~/.Xresources
