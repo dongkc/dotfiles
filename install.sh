@@ -88,6 +88,7 @@ fbreader
 
 PKGS_APPS='
 rxvt-unicode
+the_silver_searcher
 mutt
 yaourt
 ranger
