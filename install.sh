@@ -96,6 +96,7 @@ vim
 emacs
 xcape
 xbindkeys
+xdotool
 bbdb
 git
 openssh
