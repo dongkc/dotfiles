@@ -94,6 +94,8 @@ yaourt
 ranger
 vim
 emacs
+xcape
+xbindkeys
 bbdb
 git
 openssh
