@@ -35,6 +35,7 @@ redshift &
 unclutter &
 mpd
 ~/bin/mount_disk.sh
+~/bin/key_custom.sh
 
 #setxkbmap -option ctrl:swapcaps
 

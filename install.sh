@@ -243,6 +243,7 @@ config_sys_after()
   systemctl enable tlp-sleep.service
   systemctl enable NetworkManager-dispatcher.service
   systemctl mask systemd-rfkill.service
+  systemctl enable systemd-timesyncd.service
 
 }
 
