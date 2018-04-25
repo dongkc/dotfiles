@@ -34,8 +34,9 @@ keynav &
 redshift &
 unclutter &
 mpd
+~/bin/mount_disk.sh
 
-setxkbmap -option ctrl:swapcaps
+#setxkbmap -option ctrl:swapcaps
 
 xset -b
 exec awesome
