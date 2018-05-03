@@ -34,6 +34,7 @@ keynav &
 redshift &
 unclutter &
 mpd
+xbindkeys
 ~/bin/mount_disk.sh
 ~/bin/key_custom.sh
 
