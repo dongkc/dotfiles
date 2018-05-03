@@ -1,72 +1,59 @@
-# For the benefit of emacs users: -*- shell-script -*-
-###########################
-# xbindkeys configuration #
-###########################
-#
-# Version: 1.8.6
-#
-# If you edit this file, do not forget to uncomment any lines
-# that you change.
-# The pound(#) symbol may be used anywhere for comments.
-#
-# To specify a key, you can use 'xbindkeys --key' or
-# 'xbindkeys --multikey' and put one of the two lines in this file.
-#
-# The format of a command line is:
-#    "command to start"
-#       associated key
-#
-#
-# A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h
-# The XK_ is not needed.
-#
-# List of modifier:
-#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
-#
+# vi ft=shell
 
-# The release modifier is not a standard X modifier, but you can
-# use it if you want to catch release events instead of press events
+# "pidgin"
+#     Control+Mod4 + p
+# "~/.scripts/switch_todo_stock"
+#     Control+Mod4 + w
+# "~/.scripts/start_proxy"
+#     Control+Shift+Mod4 + p
 
-# By defaults, xbindkeys does not pay attention with the modifiers
-# NumLock, CapsLock and ScrollLock.
-# Uncomment the lines above if you want to pay attention to them.
+# Sound
+# "amixer sset Master 5%- unmute"
+#     XF86AudioLowerVolume
+# "amixer sset Master 5%+ unmute"
+#     XF86AudioRaiseVolume
+# "amixer sset Master toggle"
+#     XF86AudioMute
 
-#keystate_numlock = enable
-#keystate_capslock = enable
-#keystate_scrolllock= enable
-
-# Examples of commands:
-
-"xbindkeys_show" 
-  control+shift + q
-
-# set directly keycode (here control + f with my keyboard)
-"xterm"
-  c:41 + m:0x4
-
-# specify a mouse button
-"xterm"
-  control + b:2
-
-  "slock"
-  Mod4 + l
-#"xterm -geom 50x20+20+20"
-#   Shift+Mod2+alt + s
+#"xdotool windowminimize $(xdotool search --onlyvisible --classname Terminal | grep $(xdotool getactivewindow)) || wmctrl -xR Terminal || gnome-terminal"
+#    F1
+#"wmctrl -xa Firefox || firefox"
+#    Mod4 + 2
+#"wmctrl -xa Chromium || chromium"
+#    Mod4 + 3
+#"wmctrl -xa jnlp || javaws https://www.dukascopy.com/client/live/jclient/jforex.jnlp"
+#    Mod4 + 4
+#"wmctrl -xa VirtualBox || virtualbox"
+#    Mod4 + 5
+#"wmctrl -xa Zim || zim"
+#    Mod4 + 6
+#"wmctrl -xa Evince || evince"
+#    Mod4 + 7
+#"wmctrl -xa Zeal || zeal"
+#    Mod4 + 8
+#"wmctrl -xa Android || android-studio"
+#    Mod4 + 9
+#"wmctrl -xa player.Player || genymotion"
+#    Mod4 + 0
 #
-## set directly keycode (here control+alt+mod2 + f with my keyboard)
-#"xterm"
-#  alt + c:0x29 + m:4 + mod2
-#
-## Control+Shift+a  release event starts rxvt
-#"rxvt"
-#  release+control+shift + a
-#
-## Control + mouse button 2 release event starts rxvt
-#"rxvt"
-#  Control + b:2 + Release
+#"wmctrl -xa Terminal || gnome-terminal"
+#    Control+Mod4 + t
+#"wmctrl -xa Chromium || chromium"
+#    Control+Mod4 + c
+#"wmctrl -xa jnlp || javaws https://www.dukascopy.com/client/live/jclient/jforex.jnlp"
+#    Control+Mod4 + j
+#"wmctrl -xa Firefox || firefox"
+#    Control+Mod4 + f
+#"wmctrl -xa Zim || zim"
+#    Control+Mod4 + z
+#"wmctrl -xa VirtualBox || virtualbox"
+#    Control+Mod4 + v
+#"wmctrl -xa Emacs || emacsclient -c -a ''"
+#    Control+Mod4 + e
+#"wmctrl -xa Skype || skype"
+#    Control+Mod4 + s
+#"wmctrl -xa Shutter || shutter"
+#    Control+Mod4 + p
 
-##################################
-# End of xbindkeys configuration #
-##################################
+"slock"
+    Mod4 + l
