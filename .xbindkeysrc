@@ -46,14 +46,14 @@
 #    Control+Mod4 + f
 #"wmctrl -xa Zim || zim"
 #    Control+Mod4 + z
-#"wmctrl -xa VirtualBox || virtualbox"
-#    Control+Mod4 + v
-#"wmctrl -xa Emacs || emacsclient -c -a ''"
-#    Control+Mod4 + e
+"wmctrl -xa VirtualBox || virtualbox"
+    Control+Mod4 + v
+"wmctrl -xa Emacs || emacs"
+    Control+Mod4 + e
 #"wmctrl -xa Skype || skype"
 #    Control+Mod4 + s
-#"wmctrl -xa Shutter || shutter"
-#    Control+Mod4 + p
 
+"urxvtc -e ranger"
+    Mod4 + k
 "slock"
     Mod4 + l
