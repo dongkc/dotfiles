@@ -55,7 +55,9 @@
 
 "net_reset.sh"
     Mod4 + n
+
 "urxvtc -e ranger"
     Mod4 + k
+
 "slock"
     Mod4 + l
