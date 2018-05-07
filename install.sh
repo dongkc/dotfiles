@@ -96,6 +96,8 @@ vim
 emacs
 xcape
 xbindkeys
+rofi
+dunst
 bbdb
 git
 openssh
