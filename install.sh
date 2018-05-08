@@ -97,6 +97,7 @@ emacs
 xcape
 xbindkeys
 rofi
+tint2
 dunst
 bbdb
 git
