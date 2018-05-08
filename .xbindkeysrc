@@ -46,7 +46,7 @@
 #    Control+Mod4 + f
 #"wmctrl -xa Zim || zim"
 #    Control+Mod4 + z
-"wmctrl -xa VirtualBox || virtualbox"
+"wmctrl -xa VirtualBox || virtualbox --comment win7 --startvm 72a44f7b-55da-48cc-a12d-d7a49fe2cfe1 --no-startvm-errormsgbox"
     Control+Mod4 + v
 "wmctrl -xa Emacs || emacs"
     Control+Mod4 + e
