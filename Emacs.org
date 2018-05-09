@@ -1,0 +1,552 @@
+* Org Mode
+  C-c / -> filter org tree
+  C-c \ -> 按tag搜索标题
+  C-c a m -> 按标签搜索多个文件（需要将文件加入全局agenda)
+  C-c C-a  ->  (org-attach)
+  C-c C-e -> Export
+
+  c-x C-o -> Open link
+  http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html#sec-1-2-1
+** Agenda
+   n       -> 下一行
+   p       -> 上一行
+   <space> ->  在另一个窗口中显示条目的源位置，带前缀使得整个条目在大纲中可见，而不只是标题
+   <TAB>   -> 在另一个窗口中条目的准确源位置
+   <Enter> -> 转到条目的源位置并删除其它的窗口
+
+   o   -> 删除其他窗口
+   d/w -> 切换到日/周视图
+   f/b -> 时间前移或者后移显示，例如显示了一周的内容，切换到下/上一周
+   .   -> 转到今天
+   j   -> 询问日期并转到那天
+   r/g -> 重新构造议程，以反映最新状态
+   s   -> 保存当前 Emacs 会话的所有 Org 缓冲区和ID的地址
+   l   -> 触发日志模式（Logbook mode）
+
+   0-9          -> 数字参数
+   t            -> 修改议程和 org 文件中条目的TODO状态
+   C-k          -> 删除当前的议程条目以及源文件中它的整个子树
+   C-c C-d      -> 为条目设置截止期限
+   I            -> 对当前条目开始计时
+   O/X          -> 暂停最近开始的计时
+   J            -> 在另一个窗口中跳转正在进行的计时
+   S-RIGHT/LEFT -> 将与当前行相关的时间戳改变一天
+** Outline
+   C-c C-n/p    下/上一标题
+   C-c C-f/b    下/上一标题（仅限同级标题）
+   C-c C-u    跳到上一级标题
+   C-c C-j    切换到大纲浏览状态
+   C-c *   将本行设为标题/正文
+
+   M-LEFT/RIGHT    将当前标题升/降级
+   M-RET   插入一个同级标题
+   M-S-RET   插入一个同级TODO 标题
+
+   M-h ->  mark-element, 当前在一个二级headline上，按下 M-h 则会mar中整个二级树，再按 M-h mark后来的二级树
+   C-c C-w ->  将子树或区域移动到另一标题处（跨缓冲区）
+   M-up/down -> org-move-subtree-up or org-table-move-row or org-move-item-up
+
+   M-S-LEFT/RIGHT    将子树升/降级
+   M-S-UP/DOWN   将子树上/下移
+   C-x n s/w   只显示当前子树/返回
+   C-c C-x b   在新缓冲区显示当前分支（类似C-x n s)
+   C-c C-c   取消高亮
+*** List
+    无序列表项以‘-’、‘+’或者‘*‘开头。
+    有序列表项以‘1.’或者‘1)’开头。
+    描述列表用‘::’将项和描述分开。
+    有序列表和无序列表都以缩进表示层级。只要对齐缩进，不管是换行还是分块都认为是处于当前列表项
+
+    M-S-RET   插入带复选框的项
+    M-S-UP/DOWN   移动列表项
+    C-c C-c   改变复选框状态
+    C-c -   更换列表标记（循环切换）
+** Schedule & Report
+   C-c C-d     (org-deadline)
+   C-c C-s     (org-schedule)
+
+   C-c C-x 0     (org-timer-start)
+   C-c C-x .     (org-timer)  Insert a relative time into the buffer.
+   C-c C-x -     (org-timer-item) Insert a description list item with the current relative time.
+
+   C-c C-x C-i -> 开始当前条目的计时（clock-in）
+   C-c C-x C-o -> 停止计时（clock-out）
+   C-c C-x C-e -> 为当前的计时任务更新进度
+   C-c C-x C-x -> 取消当前的计时
+   C-c C-x C-j -> 跳转到包含当前正在运行的计时的任务条目
+
+   C-c C-c / C-c C-x C-u -> org-dblock-update
+   C-c C-x C-r           -> org-clock-report
+   C-u C-c C-x C-u       -> Update all dynamic blocks
+
+   http://www.gnu.org/software/emacs/manual/html_node/org/The-clock-table.html
+
+*** SCHEDULE
+    1w表示每周，另外1d表示每天，1m表示每月
+    C-c >  -> 打开Emacs Calendar
+    C-c <  -> 把Emacs Calendar光标所在的日期插入到org mode
+    C-c C-y -> 当光标放在time range上时，计算两个timestamp之间的天数
+    C-c .  -> 插入动态日期
+    C-c ! -> 添加一个inactive 的timestamp, 不会产生agenda entry
+    C-u C-c . -> 插入日期+时间
+    C-c C-o   ->  (org-open-at-point)
+
+    S-<left>     (org-timestamp-down-day)
+    S-<right>     (org-timestamp-up-day)
+    S-<up>     (org-timestamp-up)
+    S-<down>     (org-timestamp-down-down)
+    C-c C-y     (org-evaluate-time-range)
+
+    <2009-01-22 Thu> -> 2009/01/22
+    <2009-01-29 Thu +1w> -> 2009/01/22 开始的每周四, 下一次时间为 2009/01/29
+    <2013-10-17 Thu ++1w> -> 下一次日期一定是今天之后的第一个星期四, 例如今天为2013/10/09, 下一个周期为2013/10/16
+    <2013-10-17 Thu .+1w> -> 下一次日期一定是今天之后的7天, 例如今天为2013/10/10,  下一个周期为2013/10/17
+    <2004-08-23 Mon>--<2004-08-26 Thu> -> 表示一段时间
+
+** Links
+   C-c l    保存链接
+   C-c C-l org-insert-link 创建或修改链接，可以引用已保存的链接
+   C-c C-o org-open-at-point 打开链接
+
+   C-c %   记录内部链接地址
+   C-c &   跳转到已记录的内部链接
+** Table
+   C-c |   创建或转换成表格
+
+   M-LEFT/RIGHT   移动列
+   M-UP/DOWN   移动行
+   M-S-LEFT/RIGHT    删除/插入列
+   M-S-UP/DOWN   删除/插入行
+   C-c -   添加水平分割线
+   C-c RET   添加水平分割线并跳到下一行
+   C-c ^   根据当前列排序，可以选择排序方式
+
+   http://idlebox.net/2011/apidocs/emacs-23.3.zip/org/org_3.html
+** Tag / Properties
+   C-c C-q -> 直接在标题上用
+   C-c C-c -> 创建标签
+   C-c C-x p -> Add Properties
+   M-x org-delete-property -> Org delete properties
+
+   <TAB> -> Enter a tag in the minibuffer, even if the tag is not in the predefined list
+   <SPC> -> Clear all tags for this line
+   <RET> -> Accept the modified set
+   <C-g> -> Abort without installing changes
+
++     和      a+b     同时有这两个标签
+-     排除    a-b     有 a 但没有 b
+|     或      a|b     有 a 或者有 b
+&     和      a&b     同时有 a 和 b，可以用“+”替代
+** Priorities
+   C-c ,    Set the priority of the current headline (org-priority). The command prompts for a priority character ‘A’, ‘B’ or ‘C’. When you press <SPC> instead, the priority cookie is removed from the headline. The priorities can also be changed “remotely” from the timeline and agenda buffer with the , command (see Agenda commands).
+   S-<up>   (org-priority-up)
+   S-<down> (org-priority-down)
+** TO-DOs
+   C-c a t		 (org-todo-list) Show the global TODO list.
+   C-c a T		 (org-todo-list) Like `t`, but filter by keyword
+   S-<right> / S-<left>	 Select the following/preceding TODO state
+
+   C-c [ -> 将当前文件加入到议程文件列表中
+   C-c ] 将当前文件从议程文件列表中删除
+   Add ‘[/]’ or ‘[%]’ to the headline for Progress
+
+** Archived
+   C-c C-x a   -> 将某一个节点打上ARCHIVE标签
+   C-c C-x A   -> 将当前节点归入一个名为Archive的子树中，并且这个子树是位于当前级别子树的最下方
+   C-c C-x C-s -> 是把当前的节点移到archived文件中去
+** Font
+   *粗体*
+   /斜体/
+   +删除线+
+   _下划线_
+   下标： H_2 O
+   上标： E=mc^2
+   等宽字：  =git=  或者 ～git～
+
+** Inline Image
+   M-x iimage-mode RET
+
+** Templates
+   <s  <Tab>
+   http://orgmode.org/manual/Easy-Templates.html#Easy-Templates
+   
+   #+BEGIN_SRC
+s	#+BEGIN_SRC ... #+END_SRC
+e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
+q	#+BEGIN_QUOTE ... #+END_QUOTE
+v	#+BEGIN_VERSE ... #+END_VERSE
+c	#+BEGIN_CENTER ... #+END_CENTER
+l	#+BEGIN_LaTeX ... #+END_LaTeX
+L	#+LaTeX:
+h	#+BEGIN_HTML ... #+END_HTML
+H	#+HTML:
+a	#+BEGIN_ASCII ... #+END_ASCII
+A	#+ASCII:
+i	#+INDEX: line
+I	#+INCLUDE: line
+   #+END_SRC
+
+** Babel
+   C-c C-c   -> run script in block
+   C-c C-v e -> run script in block
+   C-c C-t   -> run script in other window
+
+* Move Cursor
+  C-f/C-b -> next/backward char
+  M-f/M-b -> next/backward word
+  C-n/C-p -> next/previous line
+
+  C-a/C-e -> beginning/end of current line
+  M-a/M-e -> backward/forward sentence
+  M-{/M-} -> backward/forward paragraph
+
+  C-M-a -> beginning-of-defun
+  C-M-e -> end-of-defun
+
+  C-v/M-v -> scroll up/down
+  C-l     -> re center
+  C-M-l   -> reposition to top
+  C-c i   -> prelude-ido-goto-symbol
+  M-9 M-9 M-9 C-f -> Move forward 999 char
+
+* Mark
+  M-@ -> Mark word
+  M-h -> Mark paragraph
+  C-x h -> Mark whole buffer
+  C-u C-space -> last mark place -> then use C-space
+  C-space -> set mark
+  C-x C-x -> Exchange point and mark position
+
+* Kill text
+  C-d -> kill next char
+  Backspace -> kill backward char
+
+  M-Delete -> backward kill word
+  M-d	-> kill word
+
+  C-k -> kill line to end
+  C-0 C-k -> kill line to beginning
+  C-S- Backspace -> kill whole line
+  Super-k -> kill current line
+
+  Ctrl+Meta+w -> append-next-kill
+  M-k -> kill paragraph to end
+  C-x Delete -> backward kill paragraph
+
+  M-0 M-k -> kill paragraph to beginning
+  M-z -> zap to char
+  M-9 M-z -> ignore the first 9 chars when zap
+
+  C-u -> universal-argument -> default is 4
+
+* Register
+  + C-x r space (key) -> add to register (key)
+  + C-x r j (key) -> jump to register (key)
+  + C-x r s (key) -> save text to register (key)
+  + C-x r i (key) -> read text from register (key)
+** Bookmarks
+ + C-x r m Add current buffer to bookmarks.
+ + C-x r b Open a buffer from bookmarks.
+ + C-x r l List bookmarks.
+ + M-x bookmark-delete or in list page d (delete) -> x (execute)
+ + M-x bookmark-save
+
+* Jump
+  C-x C-SPACE - Jump between marks
+  C-u C-SPACE - Jump between local marks
+  C-x r SPACE [a-z] -> mark a point in the document
+  C-x r j [a-z] -> jump to the point in the document
+** Jump Window: (winner mode)
+   C-c <left> winner-undo
+   C-c <right> redo
+   Esc + up/down/left/right -> move window
+   C-c , -> rotate window
+** Ace Jump
+  C-c C-c -> quickly change between word-mode and char-mode
+* Undo / Redo
+  C-/ -> undo
+  C-? -> redo
+  C-x u -> undo tree
+** undo tree
+   t -> toggle-timestamps
+   s -> Exit selection mode
+   d -> Toggle diff display
+
+* Indent
+  C-x C-i -> Add tab to last mark place
+  C-u 22 C-x C-i -> Add 22 blank spaces
+  M-2 2 C-x C-i -> Add 22 blank spaces
+  M-- 22 C-x C-i -> Remove first 22 blank space
+  C-i -> indent back
+  M-\ -> delete all blanks around cursor
+  M-Space -> just one space
+  M-^ -> delete-indentation (join current line with above line)
+  C-^ -> join current line with below line
+  C-j -> indent and next line
+* Transpose
+  C-t -> transpose char
+  M-t -> transpose word
+  C-x C-t -> transpose above line
+  M-2 M-t -> transpose word to next two words
+  M-- 2 M-t -> transpose word to perv two words
+* Wrap region
+  in html mode, type < to wrap region with tag
+  other modes, select region, type punctuation
+* Abbrevs
+  C-x a l -> Add local abbrev
+  C-x a g -> Add global abbrev
+  M-x kill-all-abbrevs -> Delete all abbrevs
+  M-x edit-abbrevs -> Edit abbrevs
+
+
+  registe registe Registe
+* Comment
+  M-;     -> Insert or realign comment on current line
+  C-u M-; -> Kill comment on current line (comment-kill).
+  M-j     -> Like <RET> followed by inserting and aligning a comment (comment-indent-new-line).
+  ,,      -> comment or uncomment region or current line
+  M-x comment-region
+
+* Up/Down case
+  M-l         -> down case current word
+  M-u         -> up case current word
+  M-c         -> capitalize current word
+  M-- M-2 M-c -> capitalize last two words
+  C-x C-l     -> downcase region
+  C-x C-u     -> upcase region
+* Block Edit
+** Rectangle
+   矩形，以光标选定点为起始，当前光标点为终止的区域
+   C-x r t -> Add to the beginning (string-rectangle)
+   C-x r k -> Kill the text of the region-rectangle
+   C-x r c -> clear-rectangle
+   C-x r d -> delete-rectangle
+   C-x r k -> kill-rectangle
+   C-x r o -> open-rectangle
+   C-x r y -> yank-rectangle
+** MC
+   mc/edit-beginings-of-lines
+   mc/edit-ends-of-lines (mark lines, C-e to end, edit)
+   mc/mark-previous-like-this
+   mc/mark-all-like-this
+   mc/mark-next-like-this
+** CUA
+   Ctrl+Enter -> block select
+   [M-a]: 将rect中的文字左对齐
+   [M-b]: 用空格(tabs或者spaces)替换所有rect中的字符
+   [M-c]: 去掉所有行左侧的空格
+   [M-f]: 用单个字符替换所有rect中的字符(提示输入一个字符)
+   [M-i]: 对每行中第一个找到的数字进行加1操作(自动把0x开头的当作十六进制数字)
+   [M-k]: 剪切rect
+   [M-l]: 把rect中的内容全部转换为小写
+   [M-m]: 拷贝rect
+   [M-n]: 用一串自增的数字替换rect中的每一行(这个功能可以用来给每行编号)
+   [M-o]: rect的内容右移，选中的rect用空格填充
+   [M-r]: 用字符串替换符满足正则表达式的字符串
+   [M-R]: 上下反转
+   [M-s]: 把rect中的每一行替换为一个字符串(提示输入)
+   [M-t]: 把rect整个替换为一个字符串(提示输入)
+   [M-u]: 把rect中的内容全部转换为大写
+   [M-|]: 对rect执行一个shell命令
+* Repeat
+  C-x z -> repeat last command -> (z) repeat again
+* Align
+  align
+  C-x \ -> align-regexp
+  C-u C-x \ RET \(\s-*\) = RET 1 RET 0 RET n -> align with = for whole line
+
+* SQL
+  sql-postgres
+  sql-mysql
+  p-> M-x sql-set-sqli-buffer RET *SQL* RET (No sql process started)
+
+* Proced
+  m -> 'proced-mark
+  u -> 'proced-unmark
+  r -> renice
+  f -> filter
+  k -> 'proced-send-signal
+  s S -> 'proced-sort-interactive
+  s c -> 'proced-sort-pcpu
+  s m -> 'proced-sort-pmem
+  s p -> 'proced-sort-pid
+  s s -> 'proced-sort-start
+  s t -> 'proced-sort-time
+  s u -> 'proced-sort-user
+
+* drawing
+  Picture Mode -> use ditaa to convert ascii-art to image
+  Artist Mode
+* Term
+  <M-r> -> term-send-reverse-search-history
+  <M-x> erase-buffer -> Delete buffer
+  <C-j> -> toggle shell mode
+* Ruby
+  C-c { -> toggle { to block
+* Ispell
++ C-. -> auto correct last error word
++ M-$ -> correct current word with selection
+* Help
+  C-c C-h -> List all key binding begging with C-c
+  C-h l -> view lossage
+  C-h w function	-> key binding of function
+* Search & Replace
+  C-s C-w -> search current word
+  C-s C-y -> search yanked text
+  M-%     -> query replace
+  C-M-%   -> query replace by regexp
+* Tips
+  C-x 5 2 -> create new top-level X windows
+  M-x command-history -> show command history
+  M-x htmlize-file/buffer -> htmlize a file
+  M-x list-packages -> U (mark as upgrade) -> x (execute it) -> upgrade packages
+  M+= -> show information in region
+  C-x+= -> show information of cursor position
+  M-x tabify / untabify -> convert space to tab or tab to space
+* VC
+  C-x v l -> file log
+  C-x v L -> all log
+  C-x v ~ -> vc-revision-other-window
+  C-x v u -> vc-revert
+  C-x v = -> vc-diff
+  C-x v s -> vc-create-tag
+  M-x vc-resolve-conflicts -> resolve conflicts
+  (In ediff 'n' takes you to the next change, and 'a' or 'b' lets you choose the change from buffer A or B being compared)
+  d -> diff current file
+  D -> diff all files
+** Magit
+   c -> commit  ( -r commit amend)
+   s -> stage
+   S -> stage all
+   u -> unstage
+   U -> unstage all
+   v -> revert item
+   1,2,3 -> change diff verbosity
+* Mu4e
+  % -> mu4e-headers-mark-pattern
+  ! -> mark as read
+  ? -> mark as unread
+  x -> mark for move
+  x -> execute marked command
+  S -> search
+  R -> reply
+  F -> forward
+  C -> compose new email
+  A -> view attachment action
+  o -> view open attachment
+  e -> save attachment
+  ac -> capture an email for attach later
+  av -> capture an email as pdf
+  M-x mu4e-compose-attach-captured-message -> attach captured email
+* File & Buffer
+  C-c r -> rename file and buffer
+  C-x , -> rename buffer
+* DocView
+  n -> next page
+  p -> previous page
+  Space -> scroll next screen
+  W -> fit by width
+  H -> fit by height
+* W3m
+  h,j,k,l -> move cursor
+  Space -> next half screen
+  S-Space -> previous half screen
+  C-c M-r -> delete right tabs
+  C-c M-l -> delete left tabs
+  M-n -> copy buffer
+  C-c C-w -> delete current buffer
+  C-c C-n -> next buffer
+  C-c C-p -> previous buffer
+
+  # ctags -e --extra=+q -R
+* EShell
+  echo hello > /dev/clip
+  echo hello > /dev/kill
+  echo "hello world" >> #<buffer eshell.txt>
+
+  cd =        -> list directories
+  cd -4       -> go to the fourth one
+  cd =Dropbox -> go to the first matched directoryw
+  cd /ssh:lacoste4:~/app/current
+
+  $ setq foobar ${date}
+  Tue Nov  5 22:54:54 2002
+  $ echo $foobar
+  Tue Nov  5 22:54:54 2002
+
+  M-2 M-x eshell -> open the second eshell
+  C-u M-x eshell -> create a new eshell
+* Projectile
+  C-c p C-h -> help
+* Smartparens
+  <C-M-left>      sp-backward-slurp-sexp
+  <C-M-right>     sp-backward-barf-sexp
+  <C-left>        sp-forward-barf-sexp
+  <C-right>       sp-forward-slurp-sexp
+  <M-down>        sp-splice-sexp-killing-forward
+  <M-up>          sp-splice-sexp-killing-backward
+
+  C-M-b           sp-backward-sexp
+  C-M-d           sp-down-sexp
+  C-M-f           sp-forward-sexp
+  C-M-n           sp-up-sexp
+  C-M-p           sp-backward-down-sexp
+  C-M-u           sp-backward-up-sexp
+  M-S             sp-split-sexp
+  M-r             sp-splice-sexp-killing-around
+  M-s             sp-splice-sexp
+* Dired
+  C-c C-q -> WDired rename files with emacs magic
+* Tag
+  M-. -> Find by tag
+  M-* -> Jump back
+  C-M-. pattern -> Find a tag whose name matches pattern
+* Flycheck Error
+  M-g n -> Next error
+  M-g p -> Prev error
+* Isearch
+  M-e -> edit keyword when in search
+* IMenu
+  Search by imenu
+  WhichFuncMode
+* Helm
+  C-e -> 2nd action
+  C-j -> 3nd action
+  Tab -> View all actions
+  Fuzzy matching required intervals between the separate parts of the query
+  helm-occur
+* Calc
+  (calc-eval "1+2*9")
+* Keyboard Macros
+  C-x ( –> Start defining a keyboard macro
+  C-u C-x ) -> Re-execute last keyboard macro, then append keys to its definition
+  C-u C-u <F3> -> Append keys to the last keyboard macro without re-executing it
+  C-x ) –> Stop defining the keyboard macro
+  C-x e -> Execute the keyboard macro -> (e to repeat)
+  C-u 37 C-x e -> Execute the macro 37 times
+  C-u 0 C-x e -> Execute the macro an infinite number of times until the end of the file is reached
+  C-x C-k r -> apply-macro-to-region-lines
+
+  M-x name-last-kbd-macro -> Name the last-defined keyboard macro
+  M-x insert-kbd-macro -> Insert macro to current buffer
+  M-x edit-kbd-macro -> Edit macro (C-x C-k RET)
+
+  // Record interactive macro
+  C-x ( -> C-u C-x q -> (recursive editing at that point) -> C-M-c -> C-x )
+  // Execute interactive macro
+  C-x e -> (typing) -> C-M-c
+
+  C-x C-k C-i -> Insert counter in macro -> C-x ( -> C-x C-k C-i -> C-x )
+  C-x C-k C-c -> Set the counter
+
+  C-x C-k C-p -> kmacro-cycle-ring-previous -> (C-p previous)
+  C-x C-k C-n -> kmacro-cycle-ring-next -> (C-n next)
+  C-x C-k C-d	-> kmacro-delete-ring-head
+  C-x C-k SPC -> (kmacro-step-edit-macro) Stepwise Editing a Keyboard Macro
+  C-x C-k n -> name last macro
+  C-x C-k b -> bind last macro
+* Edit
+  C-x n n or M-x narrow-to-region -> narrow to the current region (only show region, hidden other)
+  C-x n w or M-x widen -> restore
+* Auto Complete
+  M-1,2,3,...9 -> Quick Select
