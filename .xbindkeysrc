@@ -46,12 +46,15 @@
 #    Control+Mod4 + f
 #"wmctrl -xa Zim || zim"
 #    Control+Mod4 + z
-"wmctrl -xa VirtualBox || virtualbox --comment win7 --startvm 72a44f7b-55da-48cc-a12d-d7a49fe2cfe1 --no-startvm-errormsgbox"
+"wmctrl -xa VirtualBox || virtualbox --comment win7 --startvm 9f7b267f-e600-48b7-a0f4-05d94d44ee39 --no-startvm-errormsgbox"
     Control+Mod4 + v
 "wmctrl -xa Emacs || emacs"
     Control+Mod4 + e
 #"wmctrl -xa Skype || skype"
 #    Control+Mod4 + s
+
+"poweroff"
+    Control+Mod4 + p
 
 "net_reset.sh"
     Mod4 + n
