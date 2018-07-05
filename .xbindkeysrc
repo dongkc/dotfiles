@@ -1,0 +1,63 @@
+# vi ft=shell
+
+# "pidgin"
+#     Control+Mod4 + p
+# "~/.scripts/switch_todo_stock"
+#     Control+Mod4 + w
+# "~/.scripts/start_proxy"
+#     Control+Shift+Mod4 + p
+
+# Sound
+# "amixer sset Master 5%- unmute"
+#     XF86AudioLowerVolume
+# "amixer sset Master 5%+ unmute"
+#     XF86AudioRaiseVolume
+# "amixer sset Master toggle"
+#     XF86AudioMute
+
+#"xdotool windowminimize $(xdotool search --onlyvisible --classname Terminal | grep $(xdotool getactivewindow)) || wmctrl -xR Terminal || gnome-terminal"
+#    F1
+#"wmctrl -xa Firefox || firefox"
+#    Mod4 + 2
+#"wmctrl -xa Chromium || chromium"
+#    Mod4 + 3
+#"wmctrl -xa jnlp || javaws https://www.dukascopy.com/client/live/jclient/jforex.jnlp"
+#    Mod4 + 4
+#"wmctrl -xa VirtualBox || virtualbox"
+#    Mod4 + 5
+#"wmctrl -xa Zim || zim"
+#    Mod4 + 6
+#"wmctrl -xa Evince || evince"
+#    Mod4 + 7
+#"wmctrl -xa Zeal || zeal"
+#    Mod4 + 8
+#"wmctrl -xa Android || android-studio"
+#    Mod4 + 9
+#"wmctrl -xa player.Player || genymotion"
+#    Mod4 + 0
+#
+#"wmctrl -xa Terminal || gnome-terminal"
+#    Control+Mod4 + t
+#"wmctrl -xa Chromium || chromium"
+#    Control+Mod4 + c
+#"wmctrl -xa jnlp || javaws https://www.dukascopy.com/client/live/jclient/jforex.jnlp"
+#    Control+Mod4 + j
+#"wmctrl -xa Firefox || firefox"
+#    Control+Mod4 + f
+#"wmctrl -xa Zim || zim"
+#    Control+Mod4 + z
+"wmctrl -xa VirtualBox || virtualbox --comment win7 --startvm 72a44f7b-55da-48cc-a12d-d7a49fe2cfe1 --no-startvm-errormsgbox"
+    Control+Mod4 + v
+"wmctrl -xa Emacs || emacs"
+    Control+Mod4 + e
+#"wmctrl -xa Skype || skype"
+#    Control+Mod4 + s
+
+"net_reset.sh"
+    Mod4 + n
+
+"urxvtc -e ranger"
+    Mod4 + k
+
+"slock"
+    Mod4 + l

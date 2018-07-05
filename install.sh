@@ -97,6 +97,9 @@ emacs
 xcape
 xbindkeys
 xdotool
+rofi
+tint2
+dunst
 bbdb
 git
 openssh
