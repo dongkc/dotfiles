@@ -29,4 +29,4 @@ URxvt.perl-ext-common: clipboard
 Xcursor*theme: xcursor-human
 Xcursor*size: 22
 
-#include "/home/dongkc/.config/Xcolours/solarized-light"
+#include "/home/dongkc/.config/Xcolours/solarized"
