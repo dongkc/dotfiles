@@ -41,8 +41,7 @@ ttf-inconsolata
 ttf-dejavu
 ttf-liberation
 noto-fonts
-wqy-microhei
-wqy-zenhei
+noto-fonts-cjk
 '
 
 PKGS_SHELL='
@@ -58,9 +57,6 @@ fcitx
 '
 
 PKGS_TOOLS='
-# cairo-infinality-ultimate
-# freetype2-infinality-ultimate
-# fontconfig-infinality-ultimate
 base-devel
 linux-headers
 cmake
@@ -116,7 +112,6 @@ slrn
 mpd
 mpc
 ncmpcpp
-asciidoc
 redshift
 retawq
 newsbeuter
@@ -125,17 +120,13 @@ tlp
 tlp-rdw
 tp_smapi
 acpi_call
+global
 '
 
 PKGS_YAOURT='
-awesome
-vundle-git
 vim-colors-solarized-git
-keynav-git
 urxvt-clipboard
 aclidswitch
-global
-otf-literata
 '
 
 __install() {
@@ -192,7 +183,6 @@ __install \\\$PKGS_DISPLAY
 
 # Application
 __install \\\$PKGS_APPS
-
 }
 
 install_yaourt_pkg() {
@@ -301,7 +291,6 @@ chmod 755 /mnt/stage_2.sh
 stage_1_run() {
   pacstrap /mnt base
   genfstab -p /mnt  | grep -v swap >> /mnt/etc/fstab
-
 }
 
 stage_2_run() {
