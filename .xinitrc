@@ -30,7 +30,6 @@ fi
 
 xrdb -merge ~/.Xresources
 
-keynav &
 redshift &
 unclutter &
 mpd
@@ -41,4 +40,6 @@ xbindkeys
 #setxkbmap -option ctrl:swapcaps
 
 xset -b
+#sxhkd&
+#exec bspwm
 exec awesome

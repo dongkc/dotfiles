@@ -73,7 +73,6 @@ binutils
 autojump
 arch-install-scripts
 cronie
-# imagemagick
 libnotify
 clang
 ctags
@@ -83,6 +82,8 @@ hub
 pulseaudio
 pulseaudio-alsa
 fbreader
+bspwm
+sxhkd
 '
 
 PKGS_APPS='
@@ -120,11 +121,9 @@ tlp
 tlp-rdw
 tp_smapi
 acpi_call
-global
 '
 
 PKGS_YAOURT='
-vim-colors-solarized-git
 urxvt-clipboard
 aclidswitch
 '
@@ -225,9 +224,6 @@ config_sys_after()
   sed -i '/#zh_CN/s/#//g' /etc/locale.gen
   sed -i '/#en_US/s/#//g' /etc/locale.gen
   locale-gen
-
-  # localtime
-  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
   # boot loader setting
   syslinux-install_update -i -a -m

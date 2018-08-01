@@ -1,9 +1,9 @@
 * Org Mode
-  C-c / -> filter org tree
-  C-c \ -> 按tag搜索标题
+  C-c /   -> filter org tree
+  C-c \   -> 按tag搜索标题
   C-c a m -> 按标签搜索多个文件（需要将文件加入全局agenda)
-  C-c C-a  ->  (org-attach)
-  C-c C-e -> Export
+  C-c C   -a ->  (org-attach)
+  C-c C   -e -> Export
 
   c-x C-o -> Open link
   http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html#sec-1-2-1
@@ -111,15 +111,14 @@
    C-c %   记录内部链接地址
    C-c &   跳转到已记录的内部链接
 ** Table
-   C-c |   创建或转换成表格
-
-   M-LEFT/RIGHT   移动列
-   M-UP/DOWN   移动行
-   M-S-LEFT/RIGHT    删除/插入列
-   M-S-UP/DOWN   删除/插入行
-   C-c -   添加水平分割线
-   C-c RET   添加水平分割线并跳到下一行
-   C-c ^   根据当前列排序，可以选择排序方式
+C-c |   创建或转换成表格
+M-LEFT/RIGHT   移动列
+M-UP/DOWN   移动行
+M-S-LEFT/RIGHT    删除/插入列
+M-S-UP/DOWN   删除/插入行
+C-c -   添加水平分割线
+C-c RET   添加水平分割线并跳到下一行
+C-c ^   根据当前列排序，可以选择排序方式
 
    http://idlebox.net/2011/apidocs/emacs-23.3.zip/org/org_3.html
 ** Tag / Properties
@@ -549,4 +548,4 @@ I	#+INCLUDE: line
   C-x n n or M-x narrow-to-region -> narrow to the current region (only show region, hidden other)
   C-x n w or M-x widen -> restore
 * Auto Complete
-  M-1,2,3,...9 -> Quick Select
+M-1,2,3,...9 -> Quick Select
