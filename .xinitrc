@@ -31,9 +31,14 @@ fi
 xrdb -merge ~/.Xresources
 
 redshift &
-unclutter &
+unclutter --root &
+
+urxvtd &
+
 mpd
+
 xbindkeys
+
 ~/bin/mount_disk.sh
 ~/bin/key_custom.sh
 
