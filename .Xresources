@@ -14,9 +14,10 @@ URxvt*buffered: true
 !URxvt*font: xft:DejaVu Sans Mono for Powerline:style=Bold:size=11:antialias=true,xft:wqy-zenhei:size=12:antialias=true
 !URxvt*font: xft:Source Code Pro:style=Bold:size=11:antialias=true,xft:wqy-zenhei:size=10:antialias=true
 URxvt*font: xft:Source Code Pro:style=Bold:size=11:antialias=true,xft:Source Han Sans CN:size=11:antialias=true
+!URxvt*font: xft:siji:size=11:antialias=true,xft:Source Han Sans CN:size=11:antialias=true
 URxvt*transparent:false
 URxvt*shading: 100
-URxvt*letterSpace: -2
+URxvt*letterSpace: -1
 URxvt*cursorBlink: False
 URxvt*savelines:1000000
 URxvt*depth:32

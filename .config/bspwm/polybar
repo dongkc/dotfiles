@@ -10,7 +10,6 @@ alert = #ebcb8b
 
 [bar/top]
 
-monitor = LVDS-1
 height = 24
 fixed-center = true
 background = ${colors.background}
@@ -73,7 +72,7 @@ label-song-ellipsis = true
 [module/wlan]
 
 type = internal/network
-interface = wlp2s0
+interface = wlan1
 interval = 15
 format-connected = <ramp-signal>  <label-connected>
 label-connected = %essid%
