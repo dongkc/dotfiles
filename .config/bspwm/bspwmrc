@@ -106,7 +106,7 @@ bspc rule -a Audacious state=floating follow=on
 bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
-bspc rule -a Plex state=floating
+bspc rule -a Plex state=floating desktop='^8'
 
 ## don't manage my conky & systemtray :/
 bspc rule -a Conky state=floating manage=off

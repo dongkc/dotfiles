@@ -27,7 +27,7 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
-bspc config top_padding 24
+bspc config top_padding 18
 
 
 ## color settings
@@ -106,7 +106,7 @@ bspc rule -a Audacious state=floating follow=on
 bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
-bspc rule -a Plex state=floating
+bspc rule -a Plex state=floating desktop='^8'
 
 ## don't manage my conky & systemtray :/
 bspc rule -a Conky state=floating manage=off
@@ -131,12 +131,12 @@ stalonetray &
 nm-applet &
 
 # clipboard manager
-pkill clipit
-clipit &
+# pkill clipit
+# clipit &
 
 # volume icon
-pkill volumeicon
-volumeicon &
+# pkill volumeicon
+# volumeicon &
 
 # keybind daemon
 pkill sxhkd
@@ -162,7 +162,3 @@ xsetroot -cursor_name left_ptr
 ## load panel script
 pkill panel-bspwm
 panel-bspwm &
-
-## or polybar?
-#pkill polybar
-#polybar -c ~/.config/bspwm/polybar top &
