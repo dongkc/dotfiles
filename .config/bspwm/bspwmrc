@@ -159,6 +159,10 @@ dunst &
 ## reload the cursor theme
 xsetroot -cursor_name left_ptr
 
+## load xautolock
+pkill xautolock
+xautolock -time 5 &
+
 ## load panel script
 pkill panel-bspwm
 panel-bspwm &
