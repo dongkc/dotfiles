@@ -27,6 +27,9 @@ super + Return
 XF86Audio{RaiseVolume,LowerVolume,Mute}
 	amixer {-c 0 set PCM 4dB+,-c 0 set PCM 4dB-,set Master toggle}
 	
+XF86MonBrightness{Up,Down}
+	xbacklight {-inc 5,-dec 5}
+
 ## music control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
