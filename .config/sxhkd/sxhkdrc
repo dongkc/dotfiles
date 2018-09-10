@@ -57,7 +57,7 @@ super + shift + g
 
 ## fancy lockscreen :)
 super + l
-	i3lock
+	xautolock -locknow
 	
 ## take a screenshot
 Print
