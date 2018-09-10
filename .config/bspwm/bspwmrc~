@@ -161,7 +161,7 @@ xsetroot -cursor_name left_ptr
 
 ## load xautolock
 pkill xautolock
-xautolock -time 5 &
+xautolock -time 5 -locker slock &
 
 ## load panel script
 pkill panel-bspwm
