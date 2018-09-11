@@ -162,7 +162,7 @@ xsetroot -cursor_name left_ptr
 
 ## load xautolock
 pkill xautolock
-xautolock -time 5 -locker slock -killtime 15 -killer "sudo pm-suspend" -detectsleep &
+xautolock -time 1 -locker slock -killtime 10 -killer "sudo /usr/sbin/pm-suspend" -detectsleep -corners 00+- &
 
 ## load panel script
 pkill panel-bspwm
