@@ -159,3 +159,7 @@ super + alt + {Left,Right,Up,Down}
 ## move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-10 0,0 10,0 -10,10 0}
+
+## move focus window to monitor 2
+super + shift + l
+	bspc node -m ^2
