@@ -100,7 +100,7 @@ bspc rule -a Pavucontrol desktop='^8' state=floating follow=on
 bspc rule -a Exo-helper-1 desktop='^8' state=floating follow=on
 bspc rule -a Lxrandr desktop='^8' state=floating follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
-bspc rule -a "VirtualBox Machine" desktop='^8' follow=on
+bspc rule -a "win7 [Running] - Oracle VM VirtualBox" desktop='^8' follow=on
 
 ## need to be floating
 bspc rule -a Audacious state=floating follow=on
@@ -162,7 +162,7 @@ xsetroot -cursor_name left_ptr
 
 ## load xautolock
 pkill xautolock
-xautolock -time 1 -locker slock -killtime 10 -killer "sudo /usr/sbin/pm-suspend" -detectsleep -corners 00+- &
+xautolock -time 5 -locker slock -killtime 10 -killer "sudo pm-suspend" -detectsleep -corners 00+- &
 
 ## load panel script
 pkill panel-bspwm
