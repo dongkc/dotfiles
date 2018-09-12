@@ -117,6 +117,9 @@ bspc rule -a stalonetray state=floating manage=off
 ## autostart ##
 ###############
 
+#set xbacklight
+setxlight.sh
+
 # Load bitmap fonts
 xset fp+ ~/.fonts/misc &
 
