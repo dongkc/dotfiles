@@ -2,7 +2,7 @@
 
 HOME_T480s="a0:c5:89:a6:c5:70"
 HOME_T410="58:94:6b:1a:84:20"
-WORK_DELL="00000000"
+WORK_DELL="34:02:86:61:e7:70"
 
 # get physical wireless mac addr to identify the specific machine
 PHY_ADDR=`iw dev |grep addr | tail -n 1 |awk '{print $2}'`
