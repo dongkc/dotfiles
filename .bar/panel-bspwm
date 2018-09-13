@@ -185,7 +185,7 @@ while read -r line ; do
 									FG=$COLOR_FOCUSED_OCCUPIED_FG
 									BG=$COLOR_FOCUSED_OCCUPIED_BG
 									UL=$BG
-								else
+								lse
 									# active occupied desktop
 									FG=$COLOR_OCCUPIED_FG
 									BG=$COLOR_OCCUPIED_BG
