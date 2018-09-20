@@ -1,4 +1,25 @@
 #!/bin/sh
+custom_keys () {
+    # change capsLock to Left Ctrl
+    setxkbmap -option ctrl:nocaps
+
+    # from xcap manual
+    spare_modifier="Hyper_L"
+    xmodmap -e "keycode 36 = $spare_modifier"
+    xmodmap -e "remove mod4 = $spare_modifier"
+    # hyper_l is mod4 by default
+    xmodmap -e "add Control = $spare_modifier"
+    xmodmap -e "keycode any = Return"
+    xcape -e "$spare_modifier=Return"
+    # set left ctrl to escape
+    xcape
+}
+
+disable_touchpad() {
+    # locate the Touchpad device number
+   TOUCHPAD=`xinput list | grep Touchpad | awk '{print $6} | awk -F= '{print $2}` 
+   xinput --disable $TOUCHPAD
+}
 
 HOME_T480s="a0:c5:89:a6:c5:70"
 HOME_T410="58:94:6b:1a:84:20"
@@ -18,9 +39,10 @@ case "${PHY_ADDR}" in
 
     ${WORK_DELL})
         echo "This machine is work dell"
+        # echo disable > /sys/firmware/acpi/interrupts/gpe27
         ;;
 
     *)
         echo "unkown machine"
         ;;
-    esac
+esac
