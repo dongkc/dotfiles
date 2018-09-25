@@ -17,8 +17,8 @@ custom_keys () {
 
 disable_touchpad() {
     # locate the Touchpad device number
-   TOUCHPAD=`xinput list | grep Touchpad | awk '{print $6} | awk -F= '{print $2}` 
-   xinput --disable $TOUCHPAD
+    TOUCHPAD=`xinput list | grep Touchpad | awk '{print $6} | awk -F= '{print $2}` 
+    xinput --disable $TOUCHPAD
 }
 
 HOME_T480s="a0:c5:89:a6:c5:70"
@@ -31,15 +31,26 @@ PHY_ADDR=`iw dev |grep addr | tail -n 1 |awk '{print $2}'`
 case "${PHY_ADDR}" in
     ${HOME_T480s})
         echo "This machine is t480s"
+        custom_keys
+        disable_touchpad
         ;;
 
     ${HOME_T410})
         echo "This machine is t410"
+        custom_keys
+        disable_touchpad
         ;;
 
     ${WORK_DELL})
         echo "This machine is work dell"
+        # make the left ctrl key and return key to double function, using xcap to do this
+        custom_keys
         # echo disable > /sys/firmware/acpi/interrupts/gpe27
+
+        # mount the sata disk inside the dell laptop
+        sudo mount /dev/sda2 /mnt/hd
+        sudo mount /dev/sda5 /mnt/code
+        sudo mount /dev/sda6 /mnt/doc
         ;;
 
     *)
