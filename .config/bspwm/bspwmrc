@@ -167,6 +167,9 @@ xsetroot -cursor_name left_ptr
 pkill xautolock
 xautolock -time 5 -locker slock -killtime 10 -killer "sudo pm-suspend" -detectsleep -corners 00+- &
 
+## do the hardware specific configuration
+
+~/bin/machine.sh 
 ## load panel script
 pkill panel-bspwm
 panel-bspwm &
