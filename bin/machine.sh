@@ -17,7 +17,7 @@ custom_keys () {
 
 disable_touchpad() {
     # locate the Touchpad device number
-    TOUCHPAD=`xinput list | grep Touchpad | awk '{print $6} | awk -F= '{print $2}` 
+    TOUCHPAD=`xinput list | grep Touchpad | awk '{print $6}' | awk -F= '{print $2}'` 
     xinput --disable $TOUCHPAD
 }
 
@@ -51,6 +51,9 @@ case "${PHY_ADDR}" in
         sudo mount /dev/sda2 /mnt/hd
         sudo mount /dev/sda5 /mnt/code
         sudo mount /dev/sda6 /mnt/doc
+
+	# setup dual monitors
+        xrandr --output DP1-3 --auto --output eDP1 --auto --left-of DP1-3
         ;;
 
     *)
