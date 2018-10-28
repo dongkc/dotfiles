@@ -52,6 +52,27 @@ clock() {
     done
 }
 
+cpu() {
+    while true; do
+        echo  'C' "$(icon CPU 0) $(usedcpu)"
+        sleep 5
+    done
+}
+
+ram() {
+    while true; do
+        echo  'R' "$(icon RAM 0) $(usedram)"
+        sleep 5
+    done
+}
+
+vol() {
+    while true; do
+        echo  'V' "$(icon VOL 0) $(volume)"
+        sleep 5
+    done
+}
+
 music() {
     while true; do
         status=$(mpc status | sed -n '2p')
@@ -101,6 +122,9 @@ battery() {
 }
 
 clock > "$PANEL_FIFO" &
+cpu > "$PANEL_FIFO" &
+ram > "$PANEL_FIFO" &
+vol > "$PANEL_FIFO" &
 music > "$PANEL_FIFO" &
 wifi > "$PANEL_FIFO" &
 battery > "$PANEL_FIFO" &
@@ -124,6 +148,18 @@ while read -r line ; do
 		M*)
 			# music output
 			mus="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+			;;
+		C*)
+			# cpu output
+			cpus="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+			;;
+		R*)
+			# RAM output
+			rams="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+			;;
+		V*)
+			# volume output
+			vols="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
 			;;
 		W*)
 			# bspwm's state
@@ -223,7 +259,8 @@ while read -r line ; do
 			done
 			;;
 	esac
-	printf "%s\n" "%{l}${wm}%{c}${mus}%{r}${net}${bat}${sys}" 2>/dev/null
+	#printf "%s\n" "%{l}${wm}%{c}${mus}%{r}${cpus}${net}${bat}${sys}" 2>/dev/null
+	printf "%s\n" "%{l}${wm}%{r}${cpus}${rams}${vols}${net}${bat}${sys}" 2>/dev/null
 done
 }
 
