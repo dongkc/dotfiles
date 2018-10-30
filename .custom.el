@@ -15,3 +15,6 @@
 
 ;;treate my right option as control in my macbook
 (setq mac-right-option-modifier 'control)
+(beacon-mode 1)
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
