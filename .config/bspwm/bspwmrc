@@ -87,18 +87,8 @@ bspc rule -a Xfburn desktop='^6' follow=on focus=on
 bspc rule -a Gimp desktop='^7' follow=on focus=on
 bspc rule -a Gimp-2.8 desktop='^7' follow=on focus=on
 bspc rule -a Inkscape desktop='^7' follow=on focus=on
-bspc rule -a Oomox desktop='^7' follow=on focus=on
 
 ## workspace 8 (system-settings)
-bspc rule -a Lxappearance desktop='^8' state=floating follow=on
-bspc rule -a Xfce4-settings-manager desktop='^8' state=floating follow=on
-bspc rule -a Lightdm-gtk-greeter-settings desktop='^8' state=floating follow=on
-bspc rule -a System-config-printer.py desktop='^8' state=floating follow=on
-bspc rule -a Lxtask desktop='^8' state=floating follow=on
-bspc rule -a GParted desktop='^8' follow=on focus=on
-bspc rule -a Pavucontrol desktop='^8' state=floating follow=on
-bspc rule -a Exo-helper-1 desktop='^8' state=floating follow=on
-bspc rule -a Lxrandr desktop='^8' state=floating follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
 bspc rule -a "win7 [Running] - Oracle VM VirtualBox" desktop='^8' follow=on
 
@@ -108,6 +98,7 @@ bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
 bspc rule -a Plex state=floating desktop='^8'
+bspc rule -a Zathura state=floating desktop='^8'
 
 ## don't manage my conky & systemtray :/
 bspc rule -a Conky state=floating manage=off
@@ -159,6 +150,10 @@ feh --bg-fill ~/.wallpaper.jpg
 ## load dunst
 pkill dunst
 dunst &
+
+## load redshift
+pkill redshift
+redshift &
 
 ## reload the cursor theme
 xsetroot -cursor_name left_ptr
