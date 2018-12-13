@@ -15,7 +15,18 @@ export PATH="${PATH}:$HOME/.notify"
 # Make ~/.notify folder executable
 export PATH="${PATH}:$HOME/.executor"
 
+export PATH="${PATH}:/usr/lib64/go1.11/go/bin"
+
+export PATH="${PATH}:/opt/java/jre1.8.0_191/bin"
+
 export PATH="${PATH}:/usr/sbin:/sbin"
+
+export GOPATH="$HOME/git/go"
+
+export GOROOT="/usr/lib64/go1.11/go"
+
+export http_proxy="http://127.0.0.1:7777"
+export https_proxy="http://127.0.0.1:7777"
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
