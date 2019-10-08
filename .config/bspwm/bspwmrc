@@ -18,7 +18,12 @@
 
 ## workspace name
 ## font needed wuncon-siji
-bspc monitor -d '' '' '' '' '' '' '' ''
+RET=`xrandr |grep -w connected |wc -l`
+if [ "${RET}" != "1" ]; then 
+	bspc monitor HDMI1 -d '' '' '' '' '' '' '' ''
+else
+	bspc monitor -d '' '' '' '' '' '' '' ''
+fi	
 
 ## common bspwm configuration
 bspc config border_width        2
@@ -163,8 +168,9 @@ pkill redshift
 redshift &
 
 ## load plex
-pkill Plex.sh
-/opt/Plex/Plex.sh &
+pkill plexqt-ubuntu-5.0.4-openssl.appimage
+
+/opt/plex/plexqt-ubuntu-5.0.4-openssl.appimage &
 
 ## load cow proxy server for Plex
 pkill cow

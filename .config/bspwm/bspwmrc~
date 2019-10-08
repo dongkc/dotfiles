@@ -18,7 +18,12 @@
 
 ## workspace name
 ## font needed wuncon-siji
-bspc monitor -d '' '' '' '' '' '' '' ''
+RET=`xrandr |grep -w connected |wc -l`
+if [ "${RET}" != "1" ]; then 
+	bspc monitor HDMI1 -d '' '' '' '' '' '' '' ''
+else
+	bspc monitor -d '' '' '' '' '' '' '' ''
+fi	
 
 ## common bspwm configuration
 bspc config border_width        2
@@ -87,20 +92,10 @@ bspc rule -a Xfburn desktop='^6' follow=on focus=on
 bspc rule -a Gimp desktop='^7' follow=on focus=on
 bspc rule -a Gimp-2.8 desktop='^7' follow=on focus=on
 bspc rule -a Inkscape desktop='^7' follow=on focus=on
-bspc rule -a Oomox desktop='^7' follow=on focus=on
+bspc rule -a VirtualBox desktop='^7' follow=on focus=on
 
 ## workspace 8 (system-settings)
-bspc rule -a Lxappearance desktop='^8' state=floating follow=on
-bspc rule -a Xfce4-settings-manager desktop='^8' state=floating follow=on
-bspc rule -a Lightdm-gtk-greeter-settings desktop='^8' state=floating follow=on
-bspc rule -a System-config-printer.py desktop='^8' state=floating follow=on
-bspc rule -a Lxtask desktop='^8' state=floating follow=on
-bspc rule -a GParted desktop='^8' follow=on focus=on
-bspc rule -a Pavucontrol desktop='^8' state=floating follow=on
-bspc rule -a Exo-helper-1 desktop='^8' state=floating follow=on
-bspc rule -a Lxrandr desktop='^8' state=floating follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
-bspc rule -a "win7 [Running] - Oracle VM VirtualBox" desktop='^8' follow=on
 
 ## need to be floating
 bspc rule -a Audacious state=floating follow=on
@@ -108,6 +103,7 @@ bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
 bspc rule -a Plex state=floating desktop='^8'
+#bspc rule -a Zathura state=floating desktop='^8'
 
 ## don't manage my conky & systemtray :/
 bspc rule -a Conky state=floating manage=off
@@ -146,6 +142,13 @@ nm-applet &
 pkill sxhkd
 sxhkd &
 
+## mount the webdav repo
+mount /home/dongkc/git/dav
+
+### load emacs
+#pkill emacs
+#emacs &
+
 ## music is my only friend :(
 mpd &
 
@@ -160,13 +163,36 @@ feh --bg-fill ~/.wallpaper.jpg
 pkill dunst
 dunst &
 
-## reload the cursor theme
+## load redshift
+pkill redshift
+redshift &
+
+## load plex
+pkill Plex.sh
+/opt/Plex/Plex.sh &
+
+## load cow proxy server for Plex
+pkill cow
+~/bin/cow &
+
+## load rslync daemon
+pkill rslsync
+~/bin/rslsync --config ~/.config/rslsync/config.json 
+
+## set cursor shape
 xsetroot -cursor_name left_ptr
 
 ## load xautolock
 pkill xautolock
 xautolock -time 5 -locker slock -killtime 10 -killer "sudo pm-suspend" -detectsleep -corners 00+- &
 
+## load input method fcitx
+kill fcitx
+fcitx&
+
+## do the hardware specific configuration
+
+~/bin/machine.sh 
 ## load panel script
 pkill panel-bspwm
 panel-bspwm &

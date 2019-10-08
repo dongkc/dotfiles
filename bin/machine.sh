@@ -10,9 +10,9 @@ custom_keys () {
     # hyper_l is mod4 by default
     xmodmap -e "add Control = $spare_modifier"
     xmodmap -e "keycode any = Return"
-    xcape -e "$spare_modifier=Return"
+    xcape -e "$spare_modifier=Return;Control_L=Escape"
     # set left ctrl to escape
-    xcape
+    # xcape
 }
 
 disable_touchpad() {
@@ -44,11 +44,12 @@ case "${PHY_ADDR}" in
     ${WORK_DELL})
         echo "This machine is work dell"
         # make the left ctrl key and return key to double function, using xcap to do this
-        custom_keys
+        #custom_keys
         # echo disable > /sys/firmware/acpi/interrupts/gpe27
 
         # mount the sata disk inside the dell laptop
         sudo mount /dev/sda2 /mnt/hd
+        sudo mount /dev/sda4 /mnt/usb
         sudo mount /dev/sda5 /mnt/code
         sudo mount /dev/sda6 /mnt/doc
 

@@ -1,8 +1,12 @@
 [user]
 	email = dongkechang@foxmail.com
-	name = dongkc
+	name = dongkechang
 [credential]
 	helper = store
 [github]
 	user = dongkc
-	password = dongkai
+	password = dongkaiWANLI007
+[http]
+	proxy = http://127.0.0.1:7777
+[https]
+	proxy = http://127.0.0.1:7777
